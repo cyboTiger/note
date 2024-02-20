@@ -33,3 +33,11 @@ def qsort(array,order):
         for j in range(array.len):
             ...
 ```
+
+## Open a Virtual Environment
+Sometimes, we need a **venv** to make some command run.
+### Steps 
++ in your terminal, `cd` into the expected directory.
++ enter `python3 -m venv venv` or `python -m venv venv`
++ enter `source venv/bin/activate`
++ check if the command works...
