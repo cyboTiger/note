@@ -49,7 +49,7 @@ nav:
   - Home:
     - index.md
   - 课程笔记:
-    - 
+    - courses/index.md
     - 数据结构基础: courses/FDS.md
     - 高级数据结构与算法分析: courses/ADS.md
     - 数字逻辑设计: courses/logic.md
