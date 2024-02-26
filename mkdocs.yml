@@ -48,9 +48,10 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
-  - Computer Science:
-    - 数据结构基础: docs/FDS.md
-    - 高级数据结构与算法分析: docs/ADS.md
-    - 数字逻辑设计: docs/logic.md
-    - 数据库系统: docs/DB.md
+  - 课程笔记:
+    - 
+    - 数据结构基础: courses/FDS.md
+    - 高级数据结构与算法分析: courses/ADS.md
+    - 数字逻辑设计: courses/logic.md
+    - 数据库系统: courses/DB.md
 
