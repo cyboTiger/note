@@ -53,6 +53,7 @@ db的三个抽象层次
 ## database language
 1. Data Definition Language (DDL) 
 + 定义了db的schema，如
+
  ```sql
 create table instructor (
     ID char(5),
@@ -60,6 +61,7 @@ create table instructor (
     salary numeric(8,2)
 )
 ```
+
 + DDL compiler generates a set of table templates stored in a **data dictionary（数据字典）**
 + Data dictionary contains metadata (元数据， i.e., data about data),比如
     + Database schema 
@@ -76,11 +78,13 @@ create table instructor (
 + 用得最多的DML是SQL语言
 3. SQL Query Language
 广泛用于non-procedural language，如
+
 ```sql
 select name
 from instructor
 where instructor.ID = ‘22222’
 ```
+
 4. Application Program Interface （API）
 + 像SQL这样的non-procedural language不是universal Turing machine。它不支持输入输出、网络通信
 + 这些操作必须用host language来写，如python, java, C
@@ -105,8 +109,7 @@ db system被划分成几个模块，每个模块负责一定功能
 
 ## database users
 + Application programmers – interact with system through DML calls
-+ Naïve users – invoke one of the permanent application programs that have been written previously
-Examples, people accessing database over the web, bank tellers, clerical staff
++ Naïve users – invoke one of the permanent application programs that have been written previously Examples, people accessing database over the web, bank tellers, clerical staff
 + Database Administrator - Coordinates all the activities of the database system; the database administrator has a good understanding of the enterprise’s information resources and needs.
 
 ## History of Database Systems
