@@ -13,7 +13,7 @@ theme:
     - content.code.copy
   language: zh
   font:
-    text: LXGW WenKai Screen GB Screen # Share Tech
+    text: LXGW WenKai GB Screen
     code: JetBrains Mono
   palette:
     - scheme: default
