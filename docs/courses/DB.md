@@ -54,7 +54,7 @@ db的三个抽象层次
 1. Data Definition Language (DDL) 
 + 定义了db的schema，如
 
- ```sql
+```sql
 create table instructor (
     ID char(5),
     name varchar(5),
