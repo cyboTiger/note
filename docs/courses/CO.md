@@ -66,3 +66,6 @@ Product左边64bits置零，右边64bits存放multiplier。每次循环若multip
 1bit sign + 11bits exponent + 52bits significand
 ![](CO_pics/ieee.png)
 ![](CO_pics/nan.png)
+### guard, round, sticky bit
+> The guard, round and sticky bits are used to determine if you must round, i.e. if you must remove some trailing bits from a value. The first two of the bits to be removed are the **guard** and **round** bit, respectively. The **sticky** bit is simply 1 if any of the other bits is 1. The combination of these three bits governs if the value of the bits that remain must be incremented by 1 or not.
+-- stackoverflow
