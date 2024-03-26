@@ -1,15 +1,22 @@
 site_name: ruihan's NoteBook
+site_url: https://note.cybotiger.cc
+site_author: cybotiger
+
+repo_url: https://github.com/cyboTiger/note
+repo_name: cyboTiger/note
+
+
 theme:
   name: material
   features:
+    - navigation.tracking  #锚点跟踪
     - navigation.tabs
-    - navigation.sections
-    - toc.integrate
+    - navigation.indexes
     - navigation.top
     - search.suggest
     - search.highlight
     - content.tabs.link
-    - content.code.annotation
+    - content.code.annotate
     - content.code.copy
   language: zh
   font:
@@ -30,21 +37,37 @@ theme:
       accent: lime
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - attr_list
+  - def_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - footnotes
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.magiclink
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.mark
-  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:  #任务列表
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
 nav:
   - Home:
     - index.md
@@ -54,7 +77,9 @@ nav:
     - 高级数据结构与算法分析: courses/ADS.md
     - 数字逻辑设计: courses/logic.md
     - 数据库系统: courses/DB.md
-    - 计算机组成: courses/CO.md
+    - 计算机组成: 
+      - 第二章 Instruction: courses/CO/2_instruction.md
+      - 第三章 Arithmatic: courses/CO/3_arithmatic.md
     - 面向对象: courses/oop.md
   - 自学路线:
     - self_learn/index.md
@@ -63,3 +88,12 @@ nav:
     - 反思: misc/reflections.md
     - quotes: misc/quotes.md
 
+extra_javascript:
+  - js/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  # for katex 
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  # for katex
