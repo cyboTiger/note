@@ -4,12 +4,14 @@
 ![](DB_pics/DBMS.png)
 ### DBMS(Database Management System)
 数据库管理系统的目的是让存储和访问数据变得方便高效，它包括
+
 + 定义存储的data structure
 + 提供操作数据的机制
 + 保证database safety，当发生未授权访问或系统故障时
 + 提供并发访问控制的机制
 
 ## Purpose of database system
+
 + 避免文件系统的弊端
     + Data redundancy（数据冗余） and inconsistency（不一致），如格式不同、duplicate现象
     + Data isolation（数据孤立）
@@ -19,6 +21,7 @@
 + Concurrent access anomalies（并发访问异常），要求支持并发访问
 + Security problems（安全性问题）
 database system具有的特征：
+
 + data persistence(数据持久性)
 + convenience in accessing data(数据访问便利性)
 + data integrity （数据完整性）
@@ -28,11 +31,13 @@ database system具有的特征：
 
 ## Data models
 定义：A collection of tools for describing 
+
 + Data (数据)
 + Data relationships(联系)
 + Data semantics(语义)
 + Data constraints(约束)
 类型：
+
 + Relational model(关系模型)
 + Object-based data models 
     + Object-oriented  (面向对象数据模型)
@@ -102,6 +107,7 @@ where instructor.ID = ‘22222’
 
 ## Database Engine(数据库引擎)
 db system被划分成几个模块，每个模块负责一定功能
+
 + The storage manager
 + The  query processor  
 + The transaction management component.
