@@ -1,5 +1,5 @@
 site_name: ruihan's NoteBook
-site_url: https://note.cybotiger.cc
+site_url: https://cybotiger.github.io/note/
 site_author: cybotiger
 
 repo_url: https://github.com/cyboTiger/note
@@ -87,6 +87,9 @@ nav:
   - Miscellaneous:
     - 反思: misc/reflections.md
     - quotes: misc/quotes.md
+  - Tools:
+    - mkdocs使用: tools/mkdocs.md
+
 
 extra_javascript:
   - js/katex.js
