@@ -7,9 +7,9 @@
 
 ## Algorithm analysis
 
-**Divide and conquer**（分治法）: T(n)=2T(n/2)+c*n; reduce problem size，最终time complexity为==O(nlogn)==
+**Divide and conquer**（分治法）: T(n)=2T(n/2)+c*n; reduce problem size，最终time complexity为 $O(n\log n)$
 
-**On-line Algorithm** （在线算法）: 来一个数据，处理一个数据；不需要所有data都存好再处理。节省内存空间，加快处理速度。最终time complexity为==O(n)==
+**On-line Algorithm** （在线算法）: 来一个数据，处理一个数据；不需要所有data都存好再处理。节省内存空间，加快处理速度。最终time complexity为 $O(n)$
 
 
 
@@ -71,7 +71,7 @@ List的基本操作：
 
 3. Cursor implementation :
 
-   首先，明确一下==linked list==所必须有的特征：
+   首先，明确一下 ==linked list== 所必须有的特征：
 
    + 数据存储在一些结构体(structure)中，每一个结构体都包含所存数据和指向下一个结构体的指针
    + 可以通过`malloc`和`free`来在global memory中创建(obtain)和回收(release)结构体
@@ -588,7 +588,7 @@ SearchTree  Delete( ElementType X, SearchTree T )
 
 我们的Heap就可以用complete tree来实现，在它的基础上还需要具有**Heap Order Property** :
 
-**Def** : A ==min tree== is a tree in which the key value in each node is no larger than the key values in its children (if any).  A ==min heap== is a complete binary tree that is also a min tree. 即，一个node的key小于等于它的孩子的key。同理可定义==max tree==
+**Def** : A ==min tree== is a tree in which the key value in each node is no larger than the key values in its children (if any).  A ==min heap== is a complete binary tree that is also a min tree. 即，一个node的key小于等于它的孩子的key。同理可定义 ==max tree==
 
 Heap initialization: 
 
