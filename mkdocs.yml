@@ -84,6 +84,7 @@ nav:
   - 自学路线:
     - self_learn/index.md
     - CS50-ai: self_learn/ai50.md
+    - CSAPP: self_learn/csapp.md
   - Miscellaneous:
     - 反思: misc/reflections.md
     - quotes: misc/quotes.md
