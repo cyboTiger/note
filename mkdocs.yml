@@ -76,7 +76,10 @@ nav:
     - 数据结构基础: courses/FDS.md
     - 高级数据结构与算法分析: courses/ADS.md
     - 数字逻辑设计: courses/logic.md
-    - 数据库系统: courses/DB.md
+    - 数据库系统: 
+      - courses/DB/index.md
+      - 数据库简介: courses/DB/DB.md
+      - 索引: courses/DB/db10.md
     - 计算机组成: 
       - 第二章 Instruction: courses/CO/2_instruction.md
       - 第三章 Arithmatic: courses/CO/3_arithmatic.md

@@ -1,0 +1,1 @@
+该笔记大部分来自[Hobbitqia](https://note.hobbitqia.cc/DB/)学长的数据库系统笔记

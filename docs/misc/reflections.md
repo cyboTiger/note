@@ -15,3 +15,6 @@
     曾经在高一的寒假，我在人生中第一次真正的下定决心，要好好学习。我做到了。那么为何不相信现在的自己呢？我相信自己能够下定决心，对自己的人生负责，让自己成为自己最想成为的样子！
 
     "Remember, Red. Hope, is a good thing, maybe the best of things. Good things never die."
+
+??? note "2024.5.2 First shot on fitness"
+    今天第一次尝试了健身，感觉自己真的是细狗一条。卧推连10kg都费劲，再看看人家100kg...太吓人了。健身这条路真的是任重道远啊，但愿自己能坚持下去，并收获一些惊喜吧。
