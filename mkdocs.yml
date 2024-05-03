@@ -91,7 +91,7 @@ nav:
   - Miscellaneous:
     - 反思: misc/reflections.md
     - quotes: misc/quotes.md
-    - 习惯: misc/habits.md
+    - 习惯: misc/habit.md
     - 健身: misc/fitness.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
