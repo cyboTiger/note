@@ -80,6 +80,7 @@ nav:
       - courses/DB/index.md
       - 数据库简介: courses/DB/DB.md
       - 索引: courses/DB/db10.md
+      - 查询处理: courses/DB/db11.md
     - 计算机组成: 
       - 第二章 Instruction: courses/CO/2_instruction.md
       - 第三章 Arithmatic: courses/CO/3_arithmatic.md
