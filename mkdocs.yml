@@ -47,6 +47,7 @@ markdown_extensions:
   - sane_lists
   - admonition
   - footnotes
+  - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
@@ -55,7 +56,11 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.arithmatex:
@@ -74,7 +79,10 @@ nav:
   - 课程笔记:
     - courses/index.md
     - 数据结构基础: courses/FDS.md
-    - 高级数据结构与算法分析: courses/ADS.md
+    - 高级数据结构与算法分析:
+      - courses/ADS/index.md 
+      - lec1 | AVL tree/Splay tree: courses/ADS/ads1.md
+      - lec2 | RedBlack tree/B+ tree: courses/ADS/ads2.md
     - 数字逻辑设计: courses/logic.md
     - 数据库系统: 
       - courses/DB/index.md
@@ -89,6 +97,7 @@ nav:
     - self_learn/index.md
     - CS50-ai: self_learn/ai50.md
     - CSAPP: self_learn/csapp.md
+    - 数学建模: self_learn/mathmodel.md
   - Miscellaneous:
     - 反思: misc/reflections.md
     - quotes: misc/quotes.md
