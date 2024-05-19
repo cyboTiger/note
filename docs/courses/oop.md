@@ -1,7 +1,8 @@
 # OOP笔记
 ## I/O streams
 istream和ostream的图示
-![](oop_pics/iostream.png)
+??? info
+    ![](oop_pics/iostream.png)
 ### operators
 The operator `<<` is used as an output operator on objects of type `ostream`;
 The operator `>>` is used as an input operator determines what input is accepted and what is the target of the input operation;
@@ -149,3 +150,51 @@ iterator find(const Key& key);
 
 ## Reference
 + 规则：必须在声明reference变量时初始化，和某变量绑定（成为其别名），不可二次绑定
+
+## The copy constructor (拷贝构造函数)
+格式：
+
+```cpp
+    T::T(const T&);
+
+    T t1;
+    // copy ctor usage
+    T t2 = t1;
+    T t3(t1);
+```
+
+若没有写，则c++编译器会生成一个默认拷贝构造函数。当通过`=`来赋值时，拷贝右值对象的每个字段给左值(memberwise initialization)。
+
+若成员中有其他class，则递归拷贝构造该字段。
+!!! warning
+    若成员中有指针变量，需要着重考虑指针的拷贝方式，是直接拷贝指向地址，还是拷贝一份指向的对象再指向拷贝对象。否则在析构时，有可能发生重复析构的报错
+
+### 拷贝优化
+!!! note "draft"
+    若某函数return一个T(s)，即临时构造的对象；而该函数被作为右值赋给某T对象，则会被优化为该T对象直接按s来进行临时构造
+
+为了避免重复冗余的copy构造，当使用`vector`等容器时，可以预留容器容量，然后再向容器中添加元素。通过`std::vector.reserve(size)`来预留容量，就可以有效减少`vector`扩容带来的copy操作
+
+??? info "`std::vector` mechanism"
+    vector被初始化时`capacity`为0。当`push_back/emplace_back`时，若`capacity`不够，则重新分配一块大小为原来两倍的内存给此`vector`，`capacity`变为2倍，然后把原来内存中的元素依次copy到新的内存中
+
+
+## static修饰符
+class中的static变量
+
+## operator overloading（运算符重载）
+极少数运算符不可重载；运算符重载后优先级不变
+
+格式：
+
+```cpp
+    /* unary operator */
+    
+    /* binary operator */
+    // within class
+    Integer operator+(const Integer & i1) {return ...;}
+    // in global scope
+    Integer operator+(const Integer & i1, const Integer & i2)
+    { return ...; }
+```
+
