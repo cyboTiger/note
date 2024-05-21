@@ -128,7 +128,6 @@
             base_price1 = compute_base_price(prices, a, b1, b2)
             (a_rand, b1_rand, b2_rand) = random_choose_A_B1_B2(A,B1,B2,a,b1,b2)
             base_price2 = compute_base_price(prices, a_rand, b1_rand, b2_rand)
-            print(cnt)
             val = int(np.random.binomial(n=1, p=concentration_deg, size=1)[0])
             temp = prices[i]
             prices[i] = val * base_price2 + (1 - val) * base_price1

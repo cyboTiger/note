@@ -248,5 +248,63 @@
             ```
     
 # Splay tree
-## 定义
+满足数据访问的**access locality**原则，当前访问过的结点大概率再次访问
 ## 性质
+### Amortized time bound（均摊时间上界）
+Any M consecutive tree operations starting from an empty tree take at most $O(M \log N)$ time.
+## 操作
+### 元操作
+对于非根结点X，记它的父亲和祖父结点为P、G
+
++ case1: P是root，则通过一次旋转X、P
++ case2: P不是root
+
+|zigzag|zigzig|
+|:-------:|:-------:|
+|![zigzag](pics/zigzag.png)|![zigzig](pics/zigzig.png)|
+|X,P旋转; X,G旋转|P,G旋转; X,G旋转|
+
+### 单结点操作
+
++ find
+找到该结点，将其通过上述2种元操作移至root节点
++ insert
+和普通的BST插入一样，树结构调整主要依赖于find操作
++ delete
+    1. find该结点X，此时X已位于root；
+    2. 然后移除它；
+    3. 然后找到X左子树的最大节点Y，将Y的左子树移至Y父亲的孩子，再将Y移至root，root的左右子树作为Y的左右子树（普通的BST删除）
+# Amortized Analysis
+## Aggregate analysis
+直接分析一串n个的操作总共花费的worst-case time $T(n)$，得到每个操作均摊时间为 $T(n)/n$
+## Accounting method
+对于一串n个的操作，将某操作的均摊成本 $\tilde{c_i}$ 和实际成本 $c_i$ 的差累加到**credit**上，若某操作的均摊成本 $\tilde{c_i}$ 高于实际成本 $c_i$，则credit增加，可用于后续操作的消费透支；若某操作的均摊成本低于实际成本，则消耗credit
+
+$$
+\tilde{c_i}-c_i=credit_i\\
+credit=\sum_{i=1}^{n}\tilde{c_i}-\sum_{i=1}^{n}c_i \ge 0\\
+T_{amortized}=\frac{\sum_{i=1}^{n}\tilde{c_i}}{n} \ge \frac{\sum_{i=1}^{n}c_i}{n}
+$$
+
+一般来说，我们分析出每个操作的均摊成本，然后累加。例如对于具有`multipop`操作的stack而言
+
+||`push`|`pop`|`multipop`|
+|:-------:|:-------:|:-------:|:-------:|
+| $c_i$ |1|1|`min(sizeof(stack), k)`|
+| $\tilde{c_i}$ |2|0|0|
+
+> 相当于是在push操作时已经将`pop`和`multipop`的成本已经考虑进去
+## Potential method
+相比于accounting method，势能函数分析法的区别在于每次操作的credit是势能函数的前后差，更加灵活；而势能函数则是关于数据结构当前状态的函数
+
+$$
+\tilde{c_i}-c_i=credit_i=\phi(D_i)-\phi(D_{i-1})\\
+\sum_{i=1}^{n}\tilde{c_i}=\sum_{i=1}^{n}(c_i+\phi(D_i)-\phi(D_{i-1}))\\
+=(\sum_{i=1}^{n}c_i)+\underbrace{\phi(D_i)-\phi(D_{i-1})}_{\ge 0}
+$$
+
+例如对于splay tree而言， 我们希望操作的成本越高，则势能函数降低的越多；而成本越高，树的结构调整越多，那么每个结点的高度减小越多，因此可以将势能函数设为与所有结点高度和相关的函数。
+
+我们采用 $\phi(T)=\sum_{i\in T}\log S(i)$ ，其中 $S(i)$ 是以i为根的子树的后代数量， $\log S(i)$ 用于近似子树的高度
+
+具体计算就算了，太难了（
