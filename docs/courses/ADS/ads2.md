@@ -36,7 +36,34 @@
 !!! note
     由于新插入的结点也有子节点`NIL`，而在调整过程中也会出现父辈中的红结点违例现象，因此所有红结点在示意图中均有两个孩子，且“被插入的红色结点”未必是最底层的结点
 
-![](pics/rbtree.png)
-### delete
+!!! example
+    ![](pics/rbtree.png){ align=left width="400" }
 
+    + case3: 叔叔为黑，自己是叔叔的远侄
+
+    可直接解决，不用递归向上
+
+    -----
+    
+    + case2: 叔叔为黑，自己为叔叔的近侄
+
+    先旋转成远侄，再按case3操作
+
+    可直接解决，不用递归向上
+    
+    -----
+
+    + case1: 叔叔为红
+
+    将爷爷的黑向下传递给两个孩子（下放），爷爷变红，将问题抛给爷爷解决
+
+!!! example "RBtree insert"
+    === "case3"
+        ![](pics/rbins3.png)
+    === "case2"
+        ![](pics/rbins2.png){width="600"}
+    === "case1"
+        ![](pics/rbins1.png){width="400"}
+### delete
+    
 # B+ tree（B+树）
