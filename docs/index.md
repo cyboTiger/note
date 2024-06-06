@@ -3,10 +3,10 @@
 
 + academic
     + Database
-        - [ ] Project Minisql
+        - [ ] [Project Minisql](courses/DB/minisql.md)
     + Orgnization   
-        - [ ] single-cycle CPU
-        - [ ] Pipeline CPU
+        - [x] single-cycle CPU
+        - [x] Pipeline CPU
     + ADS
         - [ ] review basic structures(AVL, splay, B+, heap...)
         - [ ] From now on, I want to self-learn by watching MYC's online course
@@ -23,7 +23,7 @@
     - [ ] driving car
 
 + research & contest
-    - [ ] 浙江大学数学建模比赛
+    - [x] 浙江大学数学建模比赛
 
 ??? note "to my self"
     想到你正在探索未知的自己，想象自己将拥有的无限可能，你难道不感到兴奋吗？
