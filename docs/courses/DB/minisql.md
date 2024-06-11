@@ -208,4 +208,11 @@
     将node分裂，返回new出来的page
 
 + `void InsertIntoParent(BPlusTreePage *old_node, GenericKey *key, BPlusTreePage *new_node, Txn *transaction)`
-#### 
+#### remove
++ `void Remove(const GenericKey *key, Txn *transaction)`
+
+    先用`FindLeafPage`找到key所在leafpage，再删除key
+
+    !!! question
+        `FindLeafPage`的第二个参数`page_id`干嘛用的？
+    

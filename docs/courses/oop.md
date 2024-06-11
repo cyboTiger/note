@@ -198,3 +198,78 @@ class中的static变量
     { return ...; }
 ```
 
+## Exception
+
+```cpp
+try {
+    // main logic here
+} catch () {
+
+} catch () {
+
+}
+```
+!!! example "下标越界"
+
+    ```cpp
+    if(idx < 0 || idx >= m_size) {
+        throw VectorIndexError(idx); 
+        // program paused here
+    }
+    return m_elements[idx];
+    ```
+
+    ```cpp
+    class VectorIndexError {
+    public:
+        VectorIndexError(int v) : m_badValue(v) {}
+        ~VectorIndexError() {}
+        void diagnostic() {
+            std::cerr << "index" << m_badValue 
+            << "out of range" ;
+        }
+    private:
+        int m_badValue;
+    }
+    ```
+
+### `throw`语句抛出异常
+
++ 控制流向前退，直到第一个handle此异常的try-catch语句(handler)
++ 向前退的过程遵循调用链
++ 一层层退栈，在栈上的对象被析构
+
+#### 语法
+
++ `throw exception;`
++ `throw;`
+
+### 选择handler
+
++ 一个try block可以有任意个handler
++ handler以出现顺序来依次检查
+    1. check for exact match
+    2. apply base class conversions (reference or pointer type only)
+    3. catch-all handler `catch (...) {}`
+
+!!! example
+    产生派生类异常时，若先handle基类异常，则不会管后续的派生类异常；
+
+    ```cpp
+    class MathErr{};
+    class UnderflowErr : public MathErr {};
+    class ZeroDividerErr : public MathErr {};
+    try {
+        throw UnderflowErr;
+    } catch (ZeroDividerErr) {
+        ...
+    } catch (MathErr) { // program will pause here
+        ...
+    } catch (UnderflowErr) {
+        ...
+    } catch (...) {
+
+    }
+    ```
+!!! note
+    越来越放宽exception的自由度，catch-all handler必须放在最后一个handler
