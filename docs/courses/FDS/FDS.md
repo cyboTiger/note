@@ -3,7 +3,7 @@
 
 ## 4个notation
 
-![](FDS_pics/notation.png)
+![](pics/notation.png)
 
 ## Algorithm analysis
 
@@ -59,15 +59,15 @@ List的基本操作：
    + 一般会加一个**dummy head**作为哨兵💂
    + 优化版：Doubly linked list，见下图
 
-   <img src="FDS_pics/doubly_linked_list.png">
+   <img src="pics/doubly_linked_list.png">
 
-   <img src="FDS_pics/doubly_linked_list_empty.png">
+   <img src="pics/doubly_linked_list_empty.png">
 
    + 适用于Polynomial ADT的表示，避免了过多存储空间的浪费
    + 可用于构建Multilist，适用于商品和消费者、课程和选课学生之间的关系
    + (**self-study**) The sparse matrix representation
 
-   <img src="FDS_pics/multilist.png">
+   <img src="pics/multilist.png">
 
 3. Cursor implementation :
 
@@ -744,7 +744,7 @@ Implementation : 链表、数组（下述5种算法以数组实现为基础）
    >
    > 因此，时间复杂度与M成线性关系
 
-![](\pics/ackman.png)
+![](pics/ackman.png)
 
 # Chapter9 Graph
 

@@ -4,12 +4,12 @@
     - [x] #2 Record manager
         * [x] serialization and deserialization
         * [x] implement `TableHeap` and `TableIterator`
-    - [ ] #3 Index manager
-        * [ ] Internal page
+    - [x] #3 Index manager
+        * [x] Internal page
         * [x] leaf page
-        * [ ] B plus tree structure
-        * [ ] index iterator
-    - [ ] #4 Catalog manager
+        * [x] B plus tree structure
+        * [x] index iterator
+    - [x] #4 Catalog manager
     - [ ] #5 Planner and Executor
 
 ## #2 Record manager
@@ -215,4 +215,7 @@
 
     !!! question
         `FindLeafPage`的第二个参数`page_id`干嘛用的？
+
+#### Redistribute
+    此处我对参数表中的index重新解释，若index=0，则neighbor_node在node之后；否则neighbor_node在node之前，
     

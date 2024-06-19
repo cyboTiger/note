@@ -4,10 +4,10 @@
 
 digital system定义：输入**discrete inputs**、**discrete internal information (system state)**，产生**discrete ouputs**
 
-<img src="logic_pics/digital_system.png">
+<img src="pics/digital_system.png">
 
 Block diagram:
-<img src="logic_pics/digital_system2.png">
+<img src="pics/digital_system2.png">
 
 ADC (Analog Digital Converter)将连续的模拟信号转换为离散的数字信号
 
@@ -15,9 +15,9 @@ ADC (Analog Digital Converter)将连续的模拟信号转换为离散的数字�
 
 01信号通过电压高低来实现
 
-<img src="logic_pics/voltage_range.png">
+<img src="pics/voltage_range.png">
 
-<img src="logic_pics/wave.png">
+<img src="pics/wave.png">
 
 > 中间非HIGH非LOW部分叫*threshold region*，属于未定义区域，当V落在此区域时称为*float*，*float*状态下输出不定
 
@@ -36,11 +36,11 @@ special power of 2:
 
 1. 减法：类似于加法会产生*carry*，减法会产生*borrow in*，给出两个数的2个binary digits (X, Y)，加上两个数上一位的*borrow in*，可得如下真值表
 
-<img src="logic_pics/binary_subtract.png">
+<img src="pics/binary_subtract.png">
 
 2. 乘法：乘法可以用竖式计算
 
-   <img src="logic_pics/binary_mul.png">
+   <img src="pics/binary_mul.png">
 
 ### 进制转换
 
@@ -75,7 +75,7 @@ data type有numeric类型的和non-numeric类型的，都可以用二进制编�
 * 8,4,-2,-1的优点也是complement code；
 * 格雷码(Gray)的特征，Two successive values differ in only one bit，相邻两数的编码只有1bit不同，可以应用于**optical shaft encoder**，一种测量角度的仪器
 
-<img src="logic_pics/gray_code.png">
+<img src="pics/gray_code.png">
 
 如左图，在转到分界线时，由于有多个环的颜色会变，而边缘设计在实际中不可控，所以每个环的变色顺序是不定的，于是变换的瞬间output是不定的；而Gray码就很好地避免了这个问题。
 

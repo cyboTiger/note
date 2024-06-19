@@ -70,7 +70,7 @@ markdown_extensions:
   - pymdownx.tasklist:  #任务列表
       custom_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 nav:
@@ -78,12 +78,12 @@ nav:
     - index.md
   - 课程笔记:
     - courses/index.md
-    - 数据结构基础: courses/FDS.md
+    - 数据结构基础: courses/FDS/FDS.md
     - 高级数据结构与算法分析:
       - courses/ADS/index.md 
       - lec1 | AVL tree/Splay tree: courses/ADS/ads1.md
       - lec2 | RedBlack tree/B+ tree: courses/ADS/ads2.md
-    - 数字逻辑设计: courses/logic.md
+    - 数字逻辑设计: courses/logic/logic.md
     - 数据库系统: 
       - courses/DB/index.md
       - 数据库简介: courses/DB/DB.md
