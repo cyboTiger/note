@@ -2,7 +2,7 @@
 ## I/O streams
 istream和ostream的图示
 ??? info
-    ![](oop_pics/iostream.png)
+    ![](pics/iostream.png)
 ### operators
 The operator `<<` is used as an output operator on objects of type `ostream`;
 The operator `>>` is used as an input operator determines what input is accepted and what is the target of the input operation;
@@ -159,7 +159,7 @@ iterator find(const Key& key);
 
 |inheritance type|public member|protected member|private member|
 |:--:|:--:|:--:|:--:|
-|`class B : private A`|private in B|private inB|inaccessible|
+|`class B : private A`|private in B|private in B|inaccessible|
 |`class B : protected A`|protected in B|protected in B|inaccessible|
 |`class B : public A`|public in B|protected in B|inaccessible|
 
@@ -171,7 +171,7 @@ iterator find(const Key& key);
 派生类在构造时，先调用基类ctor，再调用自身ctor。派生类在析构时正好相反，先调用自己的dotr，再调用基类的dtor。
 
 + ctor顺序：基类 > 派生类成员 > 派生类
-+ dtor顺序：派生类 < 派生类成员 < 基类
++ dtor顺序：派生类 > 派生类成员 > 基类
 
 初始化列表的参数顺序是没有意义的，初始化并不会按照它来执行
 
@@ -182,7 +182,7 @@ iterator find(const Key& key);
 
 
 ### Upcasting
-为了避免截(truncation)，一般通过指针来将一个派生类cast为基类
+为了避免截断(truncation)，一般通过指针来将一个派生类cast为基类
 
 ## Polymorphism（多态）
 ### `virtual`
@@ -382,6 +382,7 @@ Generic programming
     ```
 
 + class template(container)
+    
     `stack<int>`
 
 #### template instanstiation
@@ -526,11 +527,16 @@ try {
 ## Named Cast
 
 + `static_cast`
+    
     用于将指向基类的指针转换为指向派生类的指针
+
 + `dynamic_cast`
+    
     运行时检查，若继承不是多态关系(virtual)则报错
+    
 + `reinterpret_cast`
 + `const_cast`
+    
     const_cast 运算符会将 this 指针的数据类型更改为 CCTest *，以允许修改成员 number
 
 ## Multiple Inheritance

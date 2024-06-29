@@ -93,10 +93,16 @@ nav:
     - 计算机组成: 
       - 第二章 Instruction: courses/CO/2_instruction.md
       - 第三章 Arithmatic: courses/CO/3_arithmatic.md
-    - 面向对象: courses/oop.md
+    - 面向对象: courses/oop/oop.md
   - 自学路线:
     - self_learn/index.md
-    - CS50-ai: self_learn/ai50.md
+    - CS50-ai: self_learn/ai50/ai50.md
+    - CS61A: 
+      - self_learn/cs61a/index.md
+      - 第一章: self_learn/cs61a/ch1.md
+      - 第二章: self_learn/cs61a/ch2.md
+      - 第三章: self_learn/cs61a/ch3.md
+      - 第四章: self_learn/cs61a/ch4.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
   - Miscellaneous:
