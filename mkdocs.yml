@@ -94,6 +94,7 @@ nav:
       - 第二章 Instruction: courses/CO/2_instruction.md
       - 第三章 Arithmatic: courses/CO/3_arithmatic.md
     - 面向对象: courses/oop/oop.md
+    - 数据要素市场: courses/data_market.md
   - 自学路线:
     - self_learn/index.md
     - CS50-ai: self_learn/ai50/ai50.md
@@ -106,7 +107,6 @@ nav:
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
   - Miscellaneous:
-    - 反思: misc/reflections.md
     - quotes: misc/quotes.md
     - 习惯: misc/habit.md
     - 健身: misc/fitness.md
