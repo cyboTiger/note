@@ -104,6 +104,7 @@ nav:
       - 第二章: self_learn/cs61a/ch2.md
       - 第三章: self_learn/cs61a/ch3.md
       - 第四章: self_learn/cs61a/ch4.md
+    - CS321n: self_learn/cs231n/cs231n.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
   - Miscellaneous:
@@ -112,6 +113,10 @@ nav:
     - 健身: misc/fitness.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
+  - Research:
+    - 学习路线: research/roadmap.md
+    - survey on efficient/Multimodal LLM: research/survey.md
+    - 汇报: research/report.md
 
 
 extra_javascript:

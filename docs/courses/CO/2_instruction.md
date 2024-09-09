@@ -69,7 +69,7 @@ words align: 一个字是 4 字节，我们要求字的起始地址一定要是 
 
 # Instruction set
 
-![](CO_pics\riscv_inst.png)
+![](CO_pics/riscv_inst.png)
 
 ## procedure calling（函数调用）
 + sp (stack pointer) : 指向当前的栈顶，在当前进程中不断变化
