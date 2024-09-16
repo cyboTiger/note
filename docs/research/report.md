@@ -101,3 +101,13 @@ frameworks: TensorRT-LLM [222] and LMDeploy [223].
 为什么在prefilling阶段的主要latent来自于GEMM computation，而在decoding阶段的latent主要来自于weight loading？
 
 ![sparse attention mask](pics/sparse_attn.png)
+
+LLM分为train和inference两个阶段，inference阶段我就直观理解为输入prompt，由LLM回答；train阶段，根据文献，有很多方式，比如KD、ICL、CoT，这些都是通过supervised learning来进行训练的吗？
+
+主要看了KD(knowledge distillation)方法，我觉得soft probability distribution是最核心的观点，因为这种训练的信息量更大，可以让student更好的学习teacher的representation。但是这是为什么呢？
+
+It would clearly be better to train models to generalize well, but this requires information about the correct way to generalize and this information is not normally available. When we are distilling the knowledge from a large model into a small one, however, we can train the small model to generalize in the same way as the large model. If the cumbersome model generalizes well because, for example, it is the average of a large ensemble of different models, a small model trained to generalize in the same way will typically do much better on test data than a small model that is trained in the normal way on the same training set as was used to train the ensemble.
+
+When the cumbersome model is a large ensemble of simpler models, we can use an arithmetic or geometric mean of their individual predictive distributions as the soft targets. When the soft targets have high entropy, they provide much more information per training case than hard targets and much less variance in the gradient between training cases, so the small model can often be trained on much less data than the original cumbersome model and using a much higher learning rate.
+
+In the simplest form of distillation, knowledge is transferred to the distilled model by training it on a transfer set and using a soft target distribution for each case in the transfer set that is produced by using the cumbersome model with a high temperature in its softmax. The same high temperature is used when training the distilled model, but after it has been trained it uses a temperature of 1
