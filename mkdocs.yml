@@ -114,9 +114,12 @@ nav:
   - Tools:
     - mkdocs使用: tools/mkdocs.md
   - Research:
-    - 学习路线: research/roadmap.md
+    - roadmap: research/roadmap.md
+    - 方法论/短期规划: research/methodology.md
     - survey on efficient/Multimodal LLM: research/survey.md
     - 汇报: research/report.md
+    - LLaVA: research/llava.md
+    - Attention: research/attention.md
 
 
 extra_javascript:

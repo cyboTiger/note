@@ -1,47 +1,29 @@
-经过昨天的讨论，最重要的点就是 
-
-1. 不懂的要自学，多问，善用搜索
-
-2. 要高效读论文，从related work、citation、按topic搜索的开山作、在论文中出现的key word等等方式找到应该读的论文
-
-3. 实践部分，要跑一跑领域内最基本的llm，跑一跑baseline
-
-回顾一下现在的情况：Transformer还没有完全理解，LLaVA还没跑，方向有点混乱无从下手。
-
-那就先学习cs231n、跑一跑LLaVA吧
-
-抽空学习一下pengsida的经验，学习一下zotero的功能
-
--------
-+ 读survey、广度搜索阅读
-+ 跑llama、llava代码
-+ 学习cuda、vLLM、triton等工具
--------
-+ [RNN](https://arxiv.org/abs/2102.04906#)
-+ [LoRA](https://arxiv.org/pdf/2106.09685)
-+ [FlashAttention](https://arxiv.org/abs/2205.14135)
-+ [LLaVA](https://github.com/haotian-liu/LLaVA)
-+ [SSM/Mamba](https://github.com/state-spaces/mamba)
 
 
-!!! info "tips"
 
-    多关注related work
+## To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning
 
-    多找找国外的优质blog
+These results paint a picture that CoT’s utility is often circumscribed by tool augmentation: 
 
-    大方向看代表作1，2篇
++ on problems where CoT helps, we already have more powerful tools than CoT that we can employ
 
-    llava是最basic的模型一定要熟悉
++ on “soft reasoning” problems like commonsense where no tools exist, we see limited benefit from CoT. 
 
-    可以在google scholar里搜topic
+This characterization has two major implications: 
 
-    看完一篇paper，要知道 它干了什么，novelty在哪里，效果如何
++ First, CoT is unnecessary for many problems where it is widely employed: there exist more efficient prompting strategies that yield similar performance for much lower inference cost. 
 
-    paper分为两类：开山之作，做得好的工作。前者要精读，后者大致看创新点
++ Second, we see a critical need to move beyond prompt-based CoT to more sophisticated approaches based on search, interacting agents, or models more heavily fine-tuned for CoT. 
 
-    一般而言，做实验用开山作的参数，否则自己调参成本比较高
+Future work can explore **how intermediate computation can be better used to solve challenging problems outside of the math and symbolic reasoning domains**
 
-    wang xinyu: 做多模态大模型
-    chen zhuokun: model merging
-    
+### My comment
+I think the conclusion, i.e. use CoT to solve no-math/symbolic questions will be a potential field.
+
+1. sparse cross attention
+
+2. visual token selection
+
+3. efficient fine tuning
+
+都和sparsification
