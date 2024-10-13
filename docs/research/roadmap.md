@@ -1,29 +1,80 @@
+!!! note "Compilation of categorized learning resources"
+    **Cachekit** resources recommended by [Jing Liu](https://jing-liu.com/)
+
+    + [vllm](https://github.com/vllm-project/vllm)
+
+    + [Nvidia Inference Optimization blog](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization)
+
+    + [Yao Fu](https://www.notion.so/yaofu/Towards-100x-Speedup-Full-Stack-Transformer-Inference-Optimization-43124c3688e14cffaf2f1d6cbdf26c6c)
+
+    + [Yao Fu 2](https://yaofu.notion.site/Full-Stack-Transformer-Inference-Optimization-Season-2-Deploying-Long-Context-Models-ee25d3a77ba14f73b8ae19147f77d5e2)
+
+    -------
+
+    **Flash Attention**
+
+    + [Flash Attention](https://github.com/Dao-AILab/flash-attention)
+
+    -------
+    
+    **Sparse Attention** resources recommended by [Yefei He](http://hexy.tech/)
+
+    + [MInference](https://arxiv.org/abs/2407.02490)
+
+    + cross attention: online blogs will just be ok
+
+    -------
+
+    **Diffusion model** resources recommended by [bohan](https://bohanzhuang.github.io/)
+
+    + [Diffusion models](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+
+    + [Generative models](https://yang-song.net/blog/2021/score/)
+
+    -------
+
+    **Vision transformer**
+
+    + ViT
+
+    + CNN(ResNet)
+
+    -------
+    
+    **Multimodal LLM**
+
+    + [LLaVA](https://github.com/haotian-liu/LLaVA)
+
+    + [NExT-GPT](https://github.com/NExT-GPT/NExT-GPT)
+    
+    -------
+
+    **Attention** Basics
+
+    + [sebastian](https://magazine.sebastianraschka.com/p/understanding-and-coding-self-attention)
+
+    -------
+
+    **Relevant Online Courses** 
+
+    + [cs231n](https://cs231n.github.io/)
+
+    + [HanLAB TinyML](https://hanlab.mit.edu/courses/2024-fall-65940)
+
+    + [CMU dlsys](https://dlsyscourse.org/)
+
+    + [Parallel Computing](https://gfxcourses.stanford.edu/cs149/fall21/)
+
+!!! note "HuggingFace resources"
+    + [transformer tokenizer](https://huggingface.co/docs/transformers/main_classes/tokenizer)
 
 
 
-## To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning
+!!! note "General videos"
+    [Terence Tao at IMO 2024](https://www.youtube.com/watch?v=e049IoFBnLA)
 
-These results paint a picture that CoT’s utility is often circumscribed by tool augmentation: 
+    [Tokenizer](https://www.youtube.com/watch?v=zduSFxRajkE&t=5954s)
 
-+ on problems where CoT helps, we already have more powerful tools than CoT that we can employ
 
-+ on “soft reasoning” problems like commonsense where no tools exist, we see limited benefit from CoT. 
 
-This characterization has two major implications: 
 
-+ First, CoT is unnecessary for many problems where it is widely employed: there exist more efficient prompting strategies that yield similar performance for much lower inference cost. 
-
-+ Second, we see a critical need to move beyond prompt-based CoT to more sophisticated approaches based on search, interacting agents, or models more heavily fine-tuned for CoT. 
-
-Future work can explore **how intermediate computation can be better used to solve challenging problems outside of the math and symbolic reasoning domains**
-
-### My comment
-I think the conclusion, i.e. use CoT to solve no-math/symbolic questions will be a potential field.
-
-1. sparse cross attention
-
-2. visual token selection
-
-3. efficient fine tuning
-
-都和sparsification
