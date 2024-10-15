@@ -34,3 +34,6 @@ OS
 TCS
 
 + [myc](https://classroom.zju.edu.cn/coursedetail?course_id=53736&tenant_code=112)
+
+!!! note "General advice on course study"
+    [Andrej Karpathy](https://cs.stanford.edu/people/karpathy/advice.html)

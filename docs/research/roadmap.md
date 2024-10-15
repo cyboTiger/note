@@ -1,4 +1,16 @@
 !!! note "Compilation of categorized learning resources"
+    **PyTorch/LLM** Basics 
+    
+    + [from scratch](https://github.com/rasbt/LLMs-from-scratch)
+
+    + [tudui](https://github.com/xiaotudui/PyTorch-Tutorial)
+
+    + [gpt2](https://github.com/graykode/gpt-2-Pytorch/tree/master)
+
+    + [illustrated gpt2](https://jalammar.github.io/illustrated-gpt2/)
+    
+    -------
+
     **Cachekit** resources recommended by [Jing Liu](https://jing-liu.com/)
 
     + [vllm](https://github.com/vllm-project/vllm)
@@ -76,5 +88,5 @@
     [Tokenizer](https://www.youtube.com/watch?v=zduSFxRajkE&t=5954s)
 
 
-
-
+??? note "General advice for PhD"
+    [Andrej Karpathy](https://karpathy.github.io/2016/09/07/phd/)
