@@ -4,7 +4,7 @@
     - [ ] Read something novel
     - [x] go to fitness room
     - [ ] play basketball🏀
-    - [ ] play baseball🎾
+    - [ ] play tennis🎾
     - [ ] play instruments like guitar or saxophone
     - [ ] learn to cook
     - [x] driving car
