@@ -14,7 +14,7 @@
 
     [course resources](courses/index.md)
 
-    [research resources](research/roadmap.md)
+    [research resources](research/resource.md)
 
     Potential Contest
 
