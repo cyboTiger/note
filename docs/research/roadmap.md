@@ -11,7 +11,12 @@
 ## 下周规划
 
 1. MIT6.5940学习：lec5-6；lab看情况
-2. 重温[A Survey on Multimodal Large Language Models](https://arxiv.org/abs/2306.13549)，跑一些典型模型的base code，如llava/Qwen-vl
-3. 学习vllm/flashAttention的idea和code，测试性能
-4. cs231n和pytorch basic收尾
-5. 熟悉DiT/ViT架构
+2. video generation论文阅读
+   + [CLLM](https://arxiv.org/pdf/2403.00835)
+   
+   + [TRAINING-FREE SPECULATIVE JACOBI DECODING](https://arxiv.org/pdf/2410.01699)
+
+3. 重温[A Survey on Multimodal Large Language Models](https://arxiv.org/abs/2306.13549)，跑一些典型模型的base code，如llava/Qwen-vl
+4. 学习vllm/flashAttention的idea和code，测试性能
+5. cs231n和pytorch basic收尾
+6. 熟悉DiT/ViT架构
