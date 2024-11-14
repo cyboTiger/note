@@ -2,9 +2,13 @@
 ## 本周进度
 
 1. VLM paper阅读
+   
    + Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads
+   
    + Accelerating Large Language Model Decoding with Speculative Sampling
+   
    + 几篇关于auto-regressive generation的blog（忘记网址了）
+
 2. 实战
    + 利用vllm profiler对vllm的性能进行测试
 
@@ -12,6 +16,7 @@
 
 1. MIT6.5940学习：lec5-6；lab看情况
 2. video generation论文阅读
+   
    + [CLLM](https://arxiv.org/pdf/2403.00835)
    
    + [TRAINING-FREE SPECULATIVE JACOBI DECODING](https://arxiv.org/pdf/2410.01699)
