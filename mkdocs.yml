@@ -94,6 +94,7 @@ nav:
       - 第二章 Instruction: courses/CO/2_instruction.md
       - 第三章 Arithmatic: courses/CO/3_arithmatic.md
     - 面向对象: courses/oop/oop.md
+    - 计算机网络: courses/network.md
     - 数据要素市场: courses/data_market.md
   - 自学路线:
     - self_learn/index.md
@@ -104,7 +105,8 @@ nav:
       - 第二章: self_learn/cs61a/ch2.md
       - 第三章: self_learn/cs61a/ch3.md
       - 第四章: self_learn/cs61a/ch4.md
-    - CS321n: self_learn/cs231n/cs231n.md
+    - CS231n: self_learn/cs231n/cs231n.md
+    - 深度学习基础: self_learn/basicDL.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
   - Miscellaneous:

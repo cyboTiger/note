@@ -1,5 +1,9 @@
 # 笔记本
 
+!!! note "weekly roadmap"
+    + daily CNN news dictation / weekly bilibili videos dictation
+    + 
+
 ??? note "life & interest"
     - [ ] Read something novel
     - [x] go to fitness room

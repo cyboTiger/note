@@ -31,6 +31,12 @@
 
     -------
 
+    **visual generative model**
+
+    + [MIT 6.S978 Deep Generative Models](https://mit-6s978.github.io/schedule.html)
+
+    -------
+
     **Flash Attention**
 
     + [Flash Attention](https://github.com/Dao-AILab/flash-attention)
