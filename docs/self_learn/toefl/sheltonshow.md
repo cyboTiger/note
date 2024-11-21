@@ -1,0 +1,1 @@
+Just pick out anything? Or maybe at the same time we can pick out a suit for him without knowing his size. Or pick out his career form without knowing his aptitude. Pick out his breakfast cereal without knowing his fiber requirements, or his feelings about marshmallows.

@@ -109,6 +109,7 @@ nav:
     - 深度学习基础: self_learn/basicDL.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
+    - 托福: self_learn/toefl/resource.md
   - Miscellaneous:
     - quotes: misc/quotes.md
     - 习惯: misc/habit.md
