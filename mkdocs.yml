@@ -110,19 +110,20 @@ nav:
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
     - 托福: self_learn/toefl/resource.md
+  - Research:
+    - 学习资源: research/resource.md
+    - 方法论: research/methodology.md
+    - 定期规划: research/roadmap.md
+    - 两周汇报: research/report.md
+    - survey on efficient/Multimodal LLM: research/survey.md
+    - LLaVA: research/llava.md
+    - Attention: research/attention.md
   - Miscellaneous:
     - quotes: misc/quotes.md
     - 习惯: misc/habit.md
     - 健身: misc/fitness.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
-  - Research:
-    - 学习资源: research/resource.md
-    - 方法论: research/methodology.md
-    - 定期规划: research/roadmap.md
-    - survey on efficient/Multimodal LLM: research/survey.md
-    - LLaVA: research/llava.md
-    - Attention: research/attention.md
 
 
 extra_javascript:
