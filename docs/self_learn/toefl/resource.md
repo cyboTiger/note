@@ -6,8 +6,6 @@
 # Writing
 + chatgpt for refurbish
 
-+ [小站](https://top.zhan.com/toefl/listen/alltpo.html)
-
 ??? note "writing type rubric"
     ## Integrated Writing Rubric
     A response at this level successfully selects the important information from the lecture and coherently and accurately presents this information in relation to the relevant information presented in the reading. The response is well organized, and occasional language errors that are present do not result in inaccurate or imprecise presentation of content or connections.
@@ -35,8 +33,11 @@
 
 + [Sheldon talk show](sheltonshow.md)
 
-+ 
 
 # Other resources
+
++ [托福模考真题](https://tuofu100.cn/#/list)
+
++ [小站托福](https://top.zhan.com/toefl/read/alltpo.html)
 
 + [tendo](https://tendoenglish.notion.site/9365bcd14df54578829c52c467173835)

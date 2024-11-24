@@ -65,6 +65,6 @@
 
 3. [minicache](https://arxiv.org/abs/2405.14366)阅读，代码运行
 
-4. tokenizer、encoder、decoder代码搭建
+4. tokenizer、encoder、decoder代码搭建 (transformer整体pipeline搭建)
 
 5. [llmscratch](LLMs-from-scratch)学习fine-tune、pre-train

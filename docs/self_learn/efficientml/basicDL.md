@@ -30,7 +30,7 @@ output neuron is connected to input neurons in the receptive field
     |Bias **b**|$(c_o,)$|$(c_o,)$|
 
     ??? note "conv3d"
-        ![](dl/conv3d.png)
+        ![](pics/conv3d.png)
 
         $$
         h_o=h_i-k_h+1 \\
@@ -50,7 +50,7 @@ output neuron is connected to input neurons in the receptive field
 Padding can be used to keep the output feature map size is the same as input feature map size
 
 ??? note "padding"
-    ![](dl/padding.png)
+    ![](pics/padding.png)
 
 ## Strided Convolution Layer
 $$
@@ -73,7 +73,7 @@ A group of narrower convolutions
     + Bias **b**: $(c_o,)$
 
     ??? note "group convolution"
-        ![](dl/group_conv.png)
+        ![](pics/group_conv.png)
 
 ## Depthwise Convolution Layer
 Independent filter for each channel: $g=c_i=c_o$ in grouped convolution
@@ -89,7 +89,7 @@ Independent filter for each channel: $g=c_i=c_o$ in grouped convolution
     + Bias **b**: $(c_o,)$
 
     ??? note "depthwise convolution"
-        ![](dl/depthwise.png)
+        ![](pics/depthwise.png)
 
 ## Pooling Layer
 Downsample the feature map to a smaller size
@@ -101,22 +101,22 @@ Downsample the feature map to a smaller size
     + No learnable parameters
 
 ??? note "pooling"
-    ![](dl/pooling.png)
+    ![](pics/pooling.png)
 
 ## Normalization Layer
 Normalizing the features makes optimization faster
 
 ??? note "normalization"
-    ![](dl/normalization.png)
+    ![](pics/normalization.png)
 
 ## Activation Function
 typically non-linear functions
 
 ??? note "the last layer of a neural network"
-    ![](dl/synapse.png)
+    ![](pics/synapse.png)
 
 !!! note "different activation funcs"
-    ![](dl/activation.png)
+    ![](pics/activation.png)
 
 # Transformers
 [understand the keys, queries, and values in attention mechanisms?](https://stats.stackexchange.com/questions/421935/what-exactly-are-keys-queries-and-values-in-attention-mechanisms)
