@@ -54,3 +54,17 @@
 
    + [Generative models](https://yang-song.net/blog/2021/score/)
 
+# 2024.11.24
+## 本周进度
+
+## 下周规划
+
+1. [6.S978 Deep Generative Models](https://mit-6s978.github.io/)论文阅读；[lilian wen](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#nice)的diffusion数学原理理解；DiT、ViT跑代码
+
+2. [HanLab 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940)
+
+3. [minicache](https://arxiv.org/abs/2405.14366)阅读，代码运行
+
+4. tokenizer、encoder、decoder代码搭建
+
+5. [llmscratch](LLMs-from-scratch)学习fine-tune、pre-train
