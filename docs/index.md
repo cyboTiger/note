@@ -20,6 +20,8 @@
 
     [research resources](research/resource.md)
 
+    [toefl resources](self_learn/toefl/resource.md)
+
     Potential Contest
 
     + [open hackathons](https://www.openhackathons.org/s/)

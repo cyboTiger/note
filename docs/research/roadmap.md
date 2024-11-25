@@ -57,13 +57,19 @@
 # 2024.11.24
 ## 本周进度
 
+1. mit6.5940 lec5-6学习
+
+2. llava源码阅读和运行
+
+3. 正在阅读diffusion model的架构
+
 ## 下周规划
 
 1. [6.S978 Deep Generative Models](https://mit-6s978.github.io/)论文阅读；[lilian wen](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#nice)的diffusion数学原理理解；DiT、ViT跑代码
 
-2. [HanLab 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940)
+2. [MIT 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940)
 
-3. [minicache](https://arxiv.org/abs/2405.14366)阅读，代码运行
+3. 熟悉kvcache的原理和压缩方法。[minicache](https://arxiv.org/abs/2405.14366)阅读，代码运行
 
 4. tokenizer、encoder、decoder代码搭建 (transformer整体pipeline搭建)
 
