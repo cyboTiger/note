@@ -51,13 +51,26 @@ the same set of important tokens is applied to compress the KV cache, where we e
 
 # Further readings
 + [FlashAttention]()
+
++ [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)
+
+## ViT
+[vit](https://github.com/google-research/vision_transformer)
+
+
 ## unstructured/semi-structured/structured sparse attention
 + [FastV]()
+
 + [HiRED]()
 
-+ [MInference]()
++ [MInference](https://arxiv.org/abs/2407.02490)
 
 ## KV cache compression
 + token dropping-based 
 + token merging-based
 + quantization-based
+
+[ZipCache](https://arxiv.org/abs/2405.14256)
+
+[KVQuant](https://arxiv.org/pdf/2401.18079)
+
