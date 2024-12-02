@@ -1,6 +1,6 @@
 # TPO completion
 + speaking: 
-+ listening:
++ listening: 69
 + writing: 
 + reading: 69,75
 

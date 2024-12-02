@@ -1,6 +1,4 @@
-Efficient Inference for LLMs
-
-文章总结了近年来从3个层面对大语言模型进行优化/加速的各种方法
+# [Efficient Inference for LLMs](https://arxiv.org/pdf/2404.14294)
 
 # 一些前置知识
 ## Transformer架构
@@ -253,4 +251,6 @@ However, generating the relationship matrices or tensors, especially for large d
 
 -------
 
-# Multimodal LLMs
+# [Multimodal LLMs](https://arxiv.org/pdf/2306.13549)
+
+

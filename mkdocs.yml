@@ -106,7 +106,11 @@ nav:
       - 第三章: self_learn/cs61a/ch3.md
       - 第四章: self_learn/cs61a/ch4.md
     - CS231n: self_learn/cs231n/cs231n.md
-    - MIT6.5940: self_learn/efficientml/index.md
+    - MIT6.5940: 
+      - self_learn/efficientml/index.md
+      - basics (lec1): self_learn/efficientml/basicDL.md
+      - pruning (lec2): self_learn/efficientml/prune.md
+      - sparsity (lec3): self_learn/efficientml/sparse.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
     - 托福: self_learn/toefl/resource.md
