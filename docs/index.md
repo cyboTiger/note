@@ -18,7 +18,7 @@
 
     [course resources](courses/index.md)
 
-    [research resources](research/resource.md)
+    [research resources](research/general/resource.md)
 
     [toefl resources](self_learn/toefl/resource.md)
 

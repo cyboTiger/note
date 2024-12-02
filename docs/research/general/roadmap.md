@@ -73,7 +73,7 @@
 
 4. tokenizer、encoder、decoder代码搭建 (transformer整体pipeline搭建)
 
-5. [llmscratch](LLMs-from-scratch)学习fine-tune、pre-train
+5. [llmscratch](https://github.com/rasbt/LLMs-from-scratch)学习fine-tune、pre-train
 
 # 2024.12.2
 ## 本周进度
@@ -83,7 +83,7 @@
 
 ## 下周规划
 
-1. tokenizer、encoder、decoder代码搭建 (transformer整体pipeline搭建）
+1. tokenizer、encoder、decoder代码搭建 （transformer整体pipeline搭建）
 2. [llmscratch](https://github.com/rasbt/LLMs-from-scratch)学习fine-tune、pre-train
 
 3. 熟悉kvcache的原理和压缩方法。[minicache](https://arxiv.org/abs/2405.14366), [zipcache](https://arxiv.org/abs/2405.14256)阅读，代码运行

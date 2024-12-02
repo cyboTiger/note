@@ -115,13 +115,16 @@ nav:
     - 数学建模: self_learn/mathmodel.md
     - 托福: self_learn/toefl/resource.md
   - Research:
-    - 学习资源: research/resource.md
-    - 方法论: research/methodology.md
-    - 定期规划: research/roadmap.md
-    - 两周汇报: research/report.md
-    - survey on efficient/Multimodal LLM: research/survey.md
-    - LLaVA: research/llava.md
-    - Attention: research/attention.md
+    - General:
+      - 学习资源: research/general/resource.md
+      - 方法论: research/general/methodology.md
+      - 定期规划: research/general/roadmap.md
+      - 两周汇报: research/general/report.md
+    - Paper:
+      - survey on efficient/Multimodal LLM: research/paper/survey.md
+      - LLaVA: research/paper/llava.md
+      - Attention: research/paper/attention.md
+      - ZipVL: research/paper/zipvl.md
   - Miscellaneous:
     - quotes: misc/quotes.md
     - 习惯: misc/habit.md
