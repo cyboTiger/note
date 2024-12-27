@@ -96,6 +96,12 @@ nav:
     - 面向对象: courses/oop/oop.md
     - 计算机网络: courses/network.md
     - 数据要素市场: courses/data_market.md
+    - 期末复习: 
+      - courses/final_review/index.md
+      - 操作系统: courses/final_review/os.md
+      - 计算机网络: courses/final_review/network.md
+      - 体系结构: courses/final_review/arch.md
+      - 计算理论: courses/final_review/toc.md
   - 自学路线:
     - self_learn/index.md
     - CS50-ai: self_learn/ai50/ai50.md

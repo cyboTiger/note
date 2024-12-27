@@ -493,6 +493,10 @@
 !!! note "2024.12.10"
     答应自己，以后别再自我怀疑了，或者，尽量减少自我怀疑的时间吧。要相信自己成长的速度，要相信自己蜕变的潜力。
 
-    plus，我要学会适应没有正反馈、没有方向、没有监督的学习模式。
+    plus，我要学会适应没有正反馈、没有方向、没有结构层次、没有监督的学习模式。
 
     我想要，有尊严的获取财富。拥有足够的财富后，我想要幸福而自由的生活。
+
+!!! note "2024.12.26"
+    sometimes I feel lost, merely because i dont know what's fancy , or what's interesting, or what's meaningful. 
+    sometimes it's just hard to get myself to think about it.

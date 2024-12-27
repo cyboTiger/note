@@ -1,13 +1,13 @@
 ??? quote
 
-    <center><font size=4>上课要动脑子的，不思考你怎么能做到不瞌睡？</font></center>
-    <p align="right"><font size=3>———— 马德 &nbsp; &nbsp; </font></p>
-
     <center><font size=4>Hope, is a good thing, maybe the best of things. Good things never die.</font></center>
-    <p align="right"><font size=3>———— Andy &nbsp; &nbsp; </font></p>
+    <p align="right"><font size=3>———— The Shawshank Redemption &nbsp; &nbsp; </font></p>
 
-    <center><font size=4>I've learned that I'm the kind of person who can indeed achieve what he wants.</font></center>
-    <p align="right"><font size=3>———— Griffith &nbsp; &nbsp; </font></p>
+    <center><font size=4>我们都是活生生的人, 从小就被不由自主地教导用最小的付出获得最大的得到, 经常会忘记我们究竟要的是什么. 我承认我完美主义, 但我想每个人心中都有那一份求知的渴望和对真理的向往, "大学"的灵魂也就在于超越世俗, 超越时代的纯真和理想 -- 我们不是要讨好企业的毕业生, 而是要寻找改变世界的力量. </font></center>
+    <p align="right"><font size=3>———— jyy &nbsp; &nbsp; </font></p>
 
-    <center><font size=4>学习是少有的你想做好也许能做好的事，社会上有太多的事不是你想做好就能做好的。</font></center>
-    <p align="right"><font size=3>———— 张雪峰 &nbsp; &nbsp; </font></p>
+    <center><font size=4>教育除了知识的记忆之外, 更本质的是能力的训练, 即所谓的training. 而但凡training就必须克服一定的难度, 否则你就是在做重复劳动, 能力也不会有改变. 如果遇到难度就选择退缩, 或者让别人来替你克服本该由你自己克服的难度, 等于是自动放弃了获得training的机会, 而这其实是大学专业教育最宝贵的部分. </font></center>
+    <p align="right"><font size=3>———— etone &nbsp; &nbsp; </font></p>
+
+    <center><font size=4>这种"只要不影响我现在survive, 就不要紧"的想法其实非常的利己和短视: 你在专业上的技不如人, 迟早有一天会找上来, 会影响到你个人职业生涯的长远的发展; 更严重的是, 这些以得过且过的态度来对待自己专业的学生, 他们的survive其实是以透支南大教育的信誉为代价的 -- 如果我们一定比例的毕业生都是这种情况, 那么过不了多久, 不但那些混到毕业的学生也没那么容易survive了, 而且那些真正自己刻苦努力的学生, 他们的前途也会受到影响. </font></center>
+    <p align="right"><font size=3>———— etone &nbsp; &nbsp; </font></p>
