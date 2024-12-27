@@ -500,3 +500,10 @@
 !!! note "2024.12.26"
     sometimes I feel lost, merely because i dont know what's fancy , or what's interesting, or what's meaningful. 
     sometimes it's just hard to get myself to think about it.
+
+!!! note "2024.12.27"
+    For a long time, I have failed to realize that back in high school, I got most of things done without hoping I could do them.
+
+    Now for 2.5 years in university, I easily collapse when I merely think I couldn't do something, wasting chunks of time doing meaningless or harmful things.
+
+    But I hope myself remember this reminder, 没兴趣做什么科研？And this philosophy, 所有的觉悟都是自己悟出来的。
