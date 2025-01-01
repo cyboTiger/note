@@ -3,6 +3,9 @@
     <center><font size=4>Hope, is a good thing, maybe the best of things. Good things never die.</font></center>
     <p align="right"><font size=3>———— The Shawshank Redemption &nbsp; &nbsp; </font></p>
 
+    <center><font size=4>读书当一意在书，游山水当一意在山水，乘兴所至，心无旁及。 </font></center>
+    <p align="right"><font size=3>———— 钱穆 &nbsp; &nbsp; </font></p>
+
     <center><font size=4>我们都是活生生的人, 从小就被不由自主地教导用最小的付出获得最大的得到, 经常会忘记我们究竟要的是什么. 我承认我完美主义, 但我想每个人心中都有那一份求知的渴望和对真理的向往, "大学"的灵魂也就在于超越世俗, 超越时代的纯真和理想 -- 我们不是要讨好企业的毕业生, 而是要寻找改变世界的力量. </font></center>
     <p align="right"><font size=3>———— jyy &nbsp; &nbsp; </font></p>
 

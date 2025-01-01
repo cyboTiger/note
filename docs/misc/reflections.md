@@ -507,3 +507,10 @@
     Now for 2.5 years in university, I easily collapse when I merely think I couldn't do something, wasting chunks of time doing meaningless or harmful things.
 
     But I hope myself remember this reminder, 没兴趣做什么科研？And this philosophy, 所有的觉悟都是自己悟出来的。
+
+!!! note "2025.1.1"
+    呼，2025，怎么说呢？我觉得无聊慵懒的状态是我要改变的。尽管总是有无数的雄心壮志，美好幻想，却总是会因为慵懒的状态和稀薄的意识而忘却，于是，心中的火焰就此熄灭，时间虚度在什么上，事后竟想不起来。
+
+    目的性不够强，激情不够，没有自信，注意力不够集中，还有什么呢？也许，阅读不够，因而所谓的理想总是稍纵即逝。
+
+    Anyway，2025，看我的吧。
