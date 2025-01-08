@@ -106,10 +106,10 @@ area 0 virtual-link RID
 
 ### OSPF metric
 按照cost来计算，而非跳数
-S cost: 48
-E cost: 10 
-F cost: 1
-G cost: 1
+Serial cost: 48
+Ethernet cost: 10 
+FastEthernet cost: 1
+GigaEthernet cost: 1
 
 
 # Hardware

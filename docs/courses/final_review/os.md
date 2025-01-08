@@ -1,4 +1,5 @@
 > 考试时间：01月07日(10:30-12:30)
+## chap 1
 ## chap 6
 ## chap 7 deadlock
 ![](pics/rag.png)
@@ -161,10 +162,10 @@ Pi->Pj means Pi waiting for Pj
 
 -------------------------------------
 
-# Chapter 10: basic of file
+## Chapter 10: basic of file
 顺序读写（更快）
 随机读写
-## Directory structure
+### Directory structure
 A collection of nodes containing (management)  information about all files
 
 + Single-Level Directory
@@ -174,13 +175,13 @@ A collection of nodes containing (management)  information about all files
 + Tree-Structured Directories
 + Acyclic-Graph Directories
 
-## Mount
+### Mount
 将disk上的其他文件系统挂载到当前文件系统上
 ```bash
 $ mount /dev/dsk /users
 ```
 
-## Access Lists and Groups
+### Access Lists and Groups
 Three classes of users
 + owner
 + group
@@ -189,43 +190,43 @@ Three classes of users
 对于elf文件，必须具有x权限，才能执行；
 对于目录，必须具有读写权限，才能搜索；
 
-# Chapter 11: File System Implementation
-## Data structure
-### Disk structure
-### In-memory structure
+## Chapter 11: File System Implementation
+### Data structure
+#### Disk structure
+#### In-memory structure
 两个进程打开一个文件，有几个进程文件打开表，几个全局文件打开表
 一个进程打开一个文件两次，有几个进程文件打开表，几个全局文件打开表
 
-## Virtual File System
+### Virtual File System
 虚拟文件系统是不是一个文件系统？是。
 
-## Allocation method
-### Contiguous allocation
+### Allocation method
+#### Contiguous allocation
     Extent-based Allocation
-### Linked allocation
+#### Linked allocation
 Simple-need only starting address
 Free-space management system 
 no waste of space 
 No random access, poor reliability
 Mapping
-### Indexed allocation
+#### Indexed allocation
 
-## Dentry and Inode
-## Free-Space Management
+### Dentry and Inode
+### Free-Space Management
 
-# Chapter 12: Mass Storage System 
+## Chapter 12: Mass Storage System 
 seek time (moving arms to position disk head on track)
 rotational delay (waiting for block to rotate under head)
 transfer time (actually moving data to/from disk surface)
 
-## Disk scheduling
+### Disk scheduling
 
-### SCAN (elevator) Algorithm
+#### SCAN (elevator) Algorithm
 
-### C-SCAN (with look)
+#### C-SCAN (with look)
 
-## RAID (redundant arrays of inexpensive disks)
-### Disk striping
+### RAID (redundant arrays of inexpensive disks)
+#### Disk striping
 Bit-level Striping
 Block-level Striping: different blocks of a file are striped
 + RAID-0
@@ -242,7 +243,23 @@ Block-level Striping: different blocks of a file are striped
 + RAID-5
 + RAID-6
 
-# Chapter 13: I/O Systems
+## Chapter 13: I/O Systems
 
-## Signal and Interrupt
-## Direct Memory Access
+### Signal and Interrupt
+### Direct Memory Access
+
+
+
+
+## 例题
+11. Which of the following functionalities in an operating system does not need specialhardware support?
+    
+    A. process scheduling
+    
+    B. clock management
+    
+    C. address mapping
+    
+    D. interrupt system
+    
+    正确答案: A
