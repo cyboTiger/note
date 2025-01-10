@@ -180,6 +180,8 @@ $C=B\log_2(1+{\rm{SNR}})$
 + Manchester (clock XORed with signal)
 + Bipolar encoding (average tends to 0)
 
+![alt text](pics/modulation.png)
+
 ## digital modulation (for passband signal)
 ASK
 FSK
