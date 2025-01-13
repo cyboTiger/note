@@ -137,6 +137,7 @@ nav:
     - 习惯: misc/habit.md
     - 健身: misc/fitness.md
     - 网球: misc/tennis.md
+    - 节日: misc/festival.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
 
