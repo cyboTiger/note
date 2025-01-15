@@ -33,18 +33,18 @@ Linear Quantization is an affine mapping of integers to real numbers
     + 根据经验，缩放因子 ​$S_W​S_X​/S_Y$​ 总是在区间 (0,1) 内。
     + $​Z_W$​是中心对称分布的，因此可以认为是0，将 $​Z_W$​ 消去。
 
-    ![alt text](image-1.png)
+    ![alt text](pics/image-1.png)
 
     + 对于带偏置的全连接层进行线性量化 $​Y=W_X+b$
 
         + 由于权重对称和偏置对称，为了简化式子同样可设 $​Z_W​=0$ 和 $​Z_b​=0$ ,并令 $​S_b​=S_W​S_X​$
         + 再令 $​q_{bias}​=q_b​−Z_X​q_W$
 
-        ![alt text](image.png)
+        ![alt text](pics/image.png)
     
     + 对于卷积层中线性量化， $​Y={\rm{Conv}}(W,X)+b$ ，简化过程类似
 
-        ![alt text](image-2.png)
+        ![alt text](pics/image-2.png)
 
 ## Post-Training Quantization(PTQ)
 ### Quantization Granlularity 量化粒度
@@ -56,7 +56,7 @@ Linear Quantization is an affine mapping of integers to real numbers
     + Pre-Vector Quantization逐向量量化
     + Shared Micro-exponent (MX) data type共享微指数
 
-![alt text](image-3.png)
+![alt text](pics/image-3.png)
 
 1. Per-Tensor Quantization逐张量量化
 
@@ -76,7 +76,7 @@ Linear Quantization is an affine mapping of integers to real numbers
 
     （注意：下图中两个Quantization矩阵有一处不一样，因为缩放因子不一样。
 
-    ![alt text](image-4.png)
+    ![alt text](pics/image-4.png)
 
 3. VS-Quant: Per-vector Scaled Quantization逐向量量化
 
@@ -93,7 +93,7 @@ Linear Quantization is an affine mapping of integers to real numbers
         
         给定一个4位量化，即每个量化数据元素有4位宽度。每16个元素为一组共享一个4位的缩放因子，则有效位宽度为 ​4+4/16=4.25 位。
     
-    ![alt text](image-5.png)
+    ![alt text](pics/image-5.png)
 
 4. Shared Micro-exponent (MX) data type共享微指数
 
@@ -105,7 +105,7 @@ Linear Quantization is an affine mapping of integers to real numbers
             + 注意 ​L0 和 ​L1 只有指数位，​L1 使用16位指数位拥有更高的动态范围。
             + MX后面的数字表示有效位宽，具体计算见下图。
 
-    ![alt text](image-6.png)
+    ![alt text](pics/image-6.png)
 
 ### Dynamic Range Clipping动态范围裁剪
 + 与权重不同，激活范围因输入而异。
@@ -115,22 +115,22 @@ Linear Quantization is an affine mapping of integers to real numbers
         + 在训练过程中跟踪指数移动平均值。
         + 例如：在每个epoch结束后，检查该特定批次的 ​$R_{\min}​$ 和 $​R_{\max}$​，按照下列公式进行更新。经过数千个epoch后变得范围稳定平滑。
 
-        ![alt text](image-7.png)
+        ![alt text](pics/image-7.png)
 
     + 类型二：在运行时
 
         + 使用少量校准数据集来确定R的最大值最小值，这种方式不需要大量的训练.
         + 第一种假设激活值遵循高斯或拉普拉斯函数分布规律。最小化均方误差 $​\min_{|r|_{\max}}​​E[(X−Q(X))^2]$。例如对于拉普拉斯 ​(0，b) 分布，最佳削波值可以数值求解为：设为 $​|r|_{\max}​=2.83b,3.89b,5.03b$ 以适配 ​2,3,4bits 的量化。
 
-            ![alt text](image-8.png)
+            ![alt text](pics/image-8.png)
 
         + 第二种若激活值不遵循函数分布规律。为了最小化信息损失，可以利用KL散度，因为KL散度可以测量在近似给定编码时丢失的信息量，以此来确定最佳的剪枝位置。使用KL散度进行裁剪激活量化的效果如下图：
 
-            ![alt text](image-9.png)
+            ![alt text](pics/image-9.png)
 
         + 第三种使用Newton-Raphson方法最小化均方误差。定义MSE为目标函数，迭代不同的裁剪力度，寻找最小的均方误差。可以看到图中，随着裁剪标量的增大，MSE先减后增。
 
-            ![alt text](image-10.png)
+            ![alt text](pics/image-10.png)
 
 ### Rounding舍入
 + 四舍五入(Rounding-to-nearest)
@@ -148,7 +148,7 @@ Linear Quantization is an affine mapping of integers to real numbers
     \arg\min​_V||W_x−\lfloor\lfloor W\rfloor+h(V)\rceil x||^2_F​+\lambda f_{reg}​(V)
     $$
 
-    ![alt text](image-11.png)
+    ![alt text](pics/image-11.png)
 
 ## Quantization-Aware Training (QAT)量化感知训练
 + 通常情况下，如果直接量化一个模型，其精度将会下降。QAT在训练过程中模拟量化的效果（伪量化因子），使得模型能够适应量化带来的信息损失，恢复精度损失。
@@ -167,7 +167,7 @@ Linear Quantization is an affine mapping of integers to real numbers
 + STE 的核心思想：在前向传播过程中使用实际的量化函数，而在反向传播过程中，通过一种近似方法来计算梯度，从而使训练过程能够顺利进行。
 + 在反向传播过程中，STE 近似地将量化函数的梯度视为恒等函数的梯度（原本量化函数的梯度应该是恒为0）。这意味着，虽然前向传播使用了量化函数，但在反向传播时，我们假设量化函数对输入的梯度为1。
 
-![alt text](image-12.png)
+![alt text](pics/image-12.png)
 
 $$
 g_w=\frac{\partial L}{\partial W}=\frac{\partial L}{\partial Q(W)}\cdot\frac{\partial Q(W)}{\partial W}=\frac{\partial L}{\partial Q(W)}
@@ -175,4 +175,4 @@ $$
 
 如下图，经过QAT后准确率提升效果显著。尤其是对于Per-Tensor经过QAT后准确率从0.1%提升至70%。
 
-![alt text](image-13.png)
+![alt text](pics/image-13.png)

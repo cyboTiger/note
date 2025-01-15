@@ -2,9 +2,7 @@
 
 + [deep learning basics](basicDL.md)
 
-+ [pruning](prune.md)
-
-+ [sparsity](sparse.md)
++ [pruning/sparse](prune.md)
 
 + [quantization](quantize.md)
 
