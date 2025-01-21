@@ -1,9 +1,14 @@
 # 笔记本
 
-!!! note "weekly roadmap"
+!!! tip "research aspirations"
+    + [ ] set up a technical blog (using Jekyll) and update regularly (comment function)
+    + [ ] MIT linear algebra review
+    + [ ] matrix differentiation review
+
+??? note "weekly roadmap"
     + daily CNN news dictation / weekly bilibili videos dictation
 
-!!! note "roadmap in 2024 winter"
+??? note "roadmap in 2024 winter"
 
     [course resources](courses/index.md)
 

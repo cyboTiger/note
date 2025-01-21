@@ -118,11 +118,16 @@ nav:
       - pruning/sparsity (lec3-4): self_learn/efficientml/prune.md
       - quantize (lec5-6): self_learn/efficientml/quantize.md
       - NAS (lec7-8): self_learn/efficientml/nas.md
+      - Knowledge Distillation (lec9): self_learn/efficientml/kd.md
+      - TinyML (lec10-11): self_learn/efficientml/tinyml.md
+      - Transformer (lec12): self_learn/efficientml/transformer.md
+      - LLM deployment (lec13): self_learn/efficientml/deploy.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
     - 托福: self_learn/toefl/resource.md
   - Research:
     - General:
+      - 意向lab: research/general/lab.md
       - 学习资源: research/general/resource.md
       - 方法论: research/general/methodology.md
       - 定期规划: research/general/roadmap.md
@@ -140,6 +145,7 @@ nav:
     - 节日: misc/festival.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
+    - huggingface🤗使用: tools/hf.md
 
 
 extra_javascript:

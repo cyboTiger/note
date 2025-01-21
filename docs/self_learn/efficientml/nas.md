@@ -1,7 +1,7 @@
 ## Primitive operations
 不同层的MAC(multiply accumulation)计算
 
-![alt text](pics/image-14.png)
+![alt text](pics/nas/image-14.png)
 ## Classic Building Blocks
 构建模块由若干层组成，人们巧妙地将它们组合起来，以平衡准确性与计算量。
 ### ResNet50: bottleneck block
@@ -10,14 +10,14 @@
 > 问：为什么不直接使用一个 3×3 就行？
 > 答：相同通道数的 1×1 层和一个 3×3 层，FLOPs相差九倍。因此使用两个 1×1 层在首尾可以减少通道数，以降低MAC数量。如下图计算，这种设计相比直接使用一个 3×3 层计算量可以减小8.5倍。
 
-![alt text](pics/image-15.png)
+![alt text](pics/nas/image-15.png)
 
 ### ResNeXt: grouped convolution
 + 用 3×3 分组卷积替换 3×3 卷积。
 + ResNeXt的关键思想是用一个称为**“基数瓶颈”的新模块替换ResNet中的瓶颈设计**。该模块引入了一个名为“基数”的新维度，表示网络中的并行路径数量。
 + 基数瓶颈模块包含多个并行的路径，每个路径由一组卷积层组成。这些并行路径捕捉输入数据的不同方面，并使模型能够学习更多样化和细粒度的特征。然后，通过求和或连接这些路径的输出，提供更全面的输入表示
 
-![alt text](pics/image-16.png)
+![alt text](pics/nas/image-16.png)
 
 ### MobileNet: depthwise-separable block
 + 人们设计了MobileNet，旨在将这些神经网络部署在手机和移动设备上，其中要求模型参数数量较少。
@@ -26,7 +26,7 @@
     + 深度卷积（depthwise convolution）：在每个输入通道上应用一个独立的卷积核，这样可以有效地捕捉输入数据的空间特征。这一步骤在不引入额外参数的情况下，实现了参数共享和特征提取。
     + 逐点卷积（pointwise convolution）：在每个位置上应用一个1x1的卷积核，用来将深度卷积的输出特征进行线性组合，得到最终的输出特征。逐点卷积主要用来进行特征融合和降低特征的维度。
 
-    ![alt text](pics/image-17.png)
+    ![alt text](pics/nas/image-17.png)
 
 ### MobileNetV2: inverted bottleneck block
 + 由于 3×3 的深度卷积容量不足，为了补偿容量，必须增加通道数量，因此MobileNetV2采用一个扩张卷积。
@@ -36,12 +36,12 @@
     + Pointwise convolution layer（逐点卷积层）：该层使用 $1\times1$ 的逐点卷积来进行通道的降维。这个步骤有助于减少计算量和模型参数的数量。
 + 与仅使用一层 $3\times3$ 卷积的情况进行比较，MACs和Params数量都有所增加(1 : 1.37)。因此人们发现与其使用三层结构，需要记忆三种不同的激活函数，不如仅采用一个单一的密集层，即常规的 $3\times3$ 卷积。
 
-![alt text](pics/image-18.png)
+![alt text](pics/nas/image-18.png)
 
 + 随着GPU或DSP等高并行硬件的发展，深度卷积的使用越来越少。常规的 3×3 卷积有时更加高效，它能更好地利用硬件中的并行性，同时计算更为规则，并非总是MobileNet才高效。
 + 如图中对ResNet和MobileNetV2的推理和训练比较，首先将MobileNetV2归约至3/4使得两者在数据集ImageNet准确度相同。可以看出，虽然MobileNetV2的模型参数大幅减小，但是峰值激活并没有明显降低，激活成为了模型部署到设备的瓶颈。
 
-![alt text](pics/image-19.png)
+![alt text](pics/nas/image-19.png)
 
 ### ShuffleNet: 1x1 group convolution & channel shuffle
 + ShuffleNet与MobileNetV2所做的工作非常类似，首尾使用 1×1 卷积，并且都采用了分组卷积旨在减少成本。
@@ -49,24 +49,24 @@
     + 通道重排是ShuffleNet的重要组件，它的作用是在逐通道分组卷积之后，将不同组的特征进行混洗。这样做的目的是为了增加特征之间的交流和信息传递，从而提升模型的表示能力。
     + 通道重排需要高效实现，以避免数据移动，需要注意的是，重排不涉及到计算，不增加MAC。
 
-![alt text](pics/image-20.png)
+![alt text](pics/nas/image-20.png)
 
 ### Transformer: Multi-Head Self-Attention (MHSA)
 + MHSA核心思想：是将输入序列分别映射为多个查询、键和值向量，然后通过计算它们之间的相似度得到注意力权重，并将值向量加权求和得到输出。这样的操作可以理解为模型在对输入序列进行处理时，通过关注不同的语义信息来提升模型的表达能力。
 + 每个头都有自己的查询、键和值映射。每个头都可以关注输入序列中不同的局部结构和语义，通过并行计算多个头的注意力权重，模型可以更全面地捕捉输入序列的信息并提升表示能力。
 
-![alt text](pics/image-21.png)
+![alt text](pics/nas/image-21.png)
 
 ## Introduction to neural architecture search (NAS)
 ### What is NAS?
 + 在神经网络中，我们需要设计众多维度，例如层数、核数量、核大小、通道数、连接性和分辨率。因此我们希望利用机器来自动设计神经网络模型。
 + 如下图是不同模型在ImageNet上的准确性-效率权衡，带星号的是使用自动机器学习AutoML设计的模型，显然优于人工设计的模型，因其具备更小的计算量和更高的准确性。
 
-![alt text](pics/image-22.png)
+![alt text](pics/nas/image-22.png)
 
 + NAS的目标是在搜索空间中找到最佳的神经网络结构，最大化特定目标函数。
 
-![alt text](pics/image-23.png)
+![alt text](pics/nas/image-23.png)
 
 ### Search space
 + 搜索空间是一组候选神经网络结构。
@@ -82,7 +82,7 @@
         + 最后选择整合结果的方法（例如，加法操作/拼接）
     + 图的左侧是生成过程示意，右侧是作为生成示例。
 
-    ![alt text](pics/image-24.png)
+    ![alt text](pics/nas/image-24.png)
 
     > 问题：假设我们有两个候选输入，M个候选操作来转换输入，N个潜在操作来组合隐藏状态，如果我们有B层，NASNet中搜索空间的大小是多少？
     > 答案：$(2\times2\times M\times M\times N)^B=4^BM^{2B}N^B$
@@ -96,13 +96,13 @@
         + 每一次以幅度2×来改变空间分辨率，下一层的分辨率要么是2×大，2×小，或者不变。最小的空间分辨率为下采样32×。
         + 沿着蓝色节点的每条path都对应于搜索空间中的一个网络架构，我们的目标是找到一个较好的path。
 
-        ![alt text](pics/image-25.png)
+        ![alt text](pics/nas/image-25.png)
 
 ### Design the search space
 + 根据前面可以知道这是一个相当庞大的搜索空间，我们希望利用一些启发式或更巧妙的方法缩小搜索空间，以便在资源约束下的执行模型专业化。
 + 动机：对于手机、微控制器、物联网设备等边缘设备，具有延迟、能耗和内存限制。尤其是物联网设备，不同于手机4GB/8GB的内存，物联网设备的内存和存储极小，资源限制更加严重。
 
-![alt text](pics/image-26.png)
+![alt text](pics/nas/image-26.png)
 
 + 如何为TinyML设计搜索空间？
 + 训练成本高昂，应该将训练成本纳入考虑，因此仅凭准确率评估模型优劣是不够的。
@@ -112,7 +112,7 @@
 + 《MCUNet: Tiny Deep Learning on IoT Devices》中统计了不同的宽度和分辨率设计空间，在相同内存限制的条件下的FLOPs次数。并绘制了如下图曲线，FLOPs次数的CDF累计分布函数。
     + 可以看出红色实线优于黑色实线，同一内存下，红色设计空间能够达到更高的FLOPs次数。红色前20%的模型FLOPs大于50.3M，最高准确率78.7%；而黑色前20%的模型FLOPs大于32.3M，最高准确率仅74.2%。
 
-    ![alt text](pics/image-27.png)
+    ![alt text](pics/nas/image-27.png)
 
 ### Search strategy
 + 搜索策略包括：网格搜索、随机搜索、强化学习、梯度下降以及进化研究。
@@ -121,19 +121,19 @@
 + 网格搜索是一种传统的超参数优化方法。整个设计空间表示为单维设计空间的笛卡尔积。
 + 基本思想：将参数空间划分为一个网格，然后遍历网格中的每个点来评估模型的性能。对于每个参数组合，都会进行一次模型训练和评估，然后根据定义的性能指标选择最佳的参数组合。
 
-![alt text](pics/image-28.png)
+![alt text](pics/nas/image-28.png)
 
 #### 随机搜索
 + 通过在参数空间内随机选择参数组合来寻找最佳模型配置的方法。与网格搜索不同，随机搜索不需要穷举所有可能的参数组合，而是在给定的参数范围内随机选择一组参数进行模型训练和评估。
 
-![alt text](pics/image-29.png)
+![alt text](pics/nas/image-29.png)
 
 #### 强化学习
 + 模型神经结构设计作为一个顺序决策问题，可以使用强化学习来训练用RNN实现的控制器。
 + 这种方法较缓慢，因为需要迭代获得奖励进行训练。
 + 如下图，按照概率p采样架构，训练这个试验网络获得准确率R，接着计算概率p的梯度并将其乘以R以更新控制器。
 
-![alt text](pics/image-30.png)
+![alt text](pics/nas/image-30.png)
 
 #### 梯度下降法
 + 这种方法无需过多迭代，计算效率更高。
@@ -144,7 +144,7 @@
     + 因此可以计算出延迟的期望值 $\text{E}[latency]$。
     + 有了损失函数，我们就可以从延迟惩罚项中计算出体系结构参数的附加梯度。
 
-![alt text](pics/image-31.png)
+![alt text](pics/nas/image-31.png)
 
 #### 演化搜索(Evolutionary search)
 + 构建大型网络，选取一个子网络样本，检验其速度是否足够快，如果效果良好就保留，否则通过变异和交叉重新采样，重复此过程直至找到最佳个体。
@@ -154,7 +154,7 @@
     + 在每一层的两个选择中（父选项中）中随机选择一个算子。
 + 经过变异交叉后，我们可以选择最合适者作为下一代的亲本重复上述过程，直至找到最佳模型。
 
-![alt text](pics/image-32.png)
+![alt text](pics/nas/image-32.png)
 
 ## Efficient and Hardware-aware NAS
 ### Accuracy estimation strategy
@@ -164,7 +164,7 @@
     + 在验证集上评估训练后的模型，得到准确度R。
     + 缺点：高昂的培训成本，例如对于CIFAR10数据集需要训练12800个模型架构。
 
-    ![alt text](pics/image-33.png)
+    ![alt text](pics/nas/image-33.png)
 
 + Inherit weight(继承权重)
     + 从父模型中继承权重，以降低训练成本，而不是从头开始进行训练。
@@ -172,14 +172,14 @@
     + 论文Net2Deeper中：为了扩展深度，可以插入一个Identity Mapping(恒等层)，浅网络变成深网络。
     + 通过采用这种继承权重的方式，我们不再每次提出新架构时都要涉及众多参数，而是生成从net-to-net的变换更新操作。
 
-    ![alt text](pics/image-34.png)
+    ![alt text](pics/nas/image-34.png)
 
 + Hypernetwork超网络
     + 超网络由共享MLP构成，用于预测目标网络的权重。
     + 预测器基于模型的架构嵌入构建，如参数NCHW格式、不同尺寸等，通过多层图神经网络将初始架构嵌入转换为最终架构嵌入。
     + 如何训练超网络？利用梯度下降法更新超网络的权值。
 
-    ![alt text](pics/image-35.png)
+    ![alt text](pics/nas/image-35.png)
 
 ### Zero-shot NAS
 + 零样本(Zero-shot)允许模型在没有对特定任务进行任何训练或学习样本的情况下，通过解决相关任务的方法来进行模型预测。简而言之，Zero-shot学习让模型能够利用已有的知识，对从未见过的“未知”样本进行预测或分类，即使这些样本在训练阶段从未出现过。
@@ -188,12 +188,12 @@
     + ZenNAS试图表达的是，希望对输入施加一点微小的扰动，一个好的模型应该能够感受这种变化，并给出变化明显的输出，即对扰动敏感。
     + ZenNAS中使用Zen-score来代替准确度预测器，因此其不预测模型准确度，而是直接确定网络的模型复杂度，并且不需要训练其参数。其计算方法如下图所示：
 
-    ![alt text](pics/image-36.png)
+    ![alt text](pics/nas/image-36.png)
 
 + GradSign
     + 一个好的模型应该具有更密集的样本级局部极小值，即不同的局部最小值之间的距离应该更接近。
 
-        ![alt text](pics/image-37.png)
+        ![alt text](pics/nas/image-37.png)
 
     + 一个优秀的模型应当对输入扰动敏感，但是对输入扰动敏感的模型不一定就是好模型。
 
@@ -209,21 +209,21 @@
     + 在推理阶段，我们可采样最大概率，并根据这些架构参数证明那些冗余路径。
     + 最终确定了架构后，为确保内存中仅有一条激活路径处于活动状态，使用二值化参数即仅含0和1。
 
-![alt text](pics/image-38.png)
+![alt text](pics/nas/image-38.png)
 
 #### MACs==真实的硬件效率？
 + 下图中MobileNetV2的MACs更大，但是延迟更低；而AmoebaNet-A的MACs更小，但是延迟更高。
     + 因此那些传统的NAS方法尽管与人工设计相比具有相似的MACs，但实际上却引入了更高的延迟。
     + 因此我们可以知道，MACs 不等于真实的硬件效率。
 
-    ![alt text](pics/image-39.png)
+    ![alt text](pics/nas/image-39.png)
 
 + 如图为分别对隐藏层维度和层数进行缩放时，延迟与MACs的变化情况。
 
     + 两者具有相同起点，但是随着MACs的增大，延迟变化情况分化。
     + 当扩展神经网络的维度时，实际上延迟并不会显著增加，因为GPU具有极高的并行性，即使增加工作负载扩大通道数，延迟也不会明显上升。
 
-    ![alt text](pics/image-40.png)
+    ![alt text](pics/nas/image-40.png)
 
 #### 延迟预测
 + 由于MACs不能很好的反应硬件效率，因此延迟的反馈极为关键。而在设备上直接测量延迟速度较慢且成本昂贵，因此可以构建一个延迟模型，通过首先收集延迟数据集来预测延迟，输入为架构表示，输出为预测的延迟时间。
@@ -234,37 +234,37 @@
         + 神经网络具有不同的层，不同层具有不同且有限的选择。我们可以预先计算并测量每个选择的延迟，构建一个查找表。对于查找表，可以使用操作符与延迟一一对应，更快预测延迟。
         + 下图展示了使用延迟查找表进行预测的效果，实际结果与预测十分接近。
 
-        ![alt text](pics/image-41.png)
+        ![alt text](pics/nas/image-41.png)
 
     2. 网络级延迟分析：延迟预测模型 
         + 更通用的模型，从网络架构层级预测。
         + 输入特征包含卷积核大小、宽度、分辨率等绝大部分超参数，通过多层的感知机MLP作为连接层，输出+ 预测的延迟时间。其中MLP也可以换成更加复杂的图神经网络等。
         + 下图展示了网络级延迟预测模型的效果，来自《HAT: Hardware-Aware Transformers for Efficient Natural Language Processing》[Wang et al., ACL 2020]。
 
-        ![alt text](pics/image-42.png)
+        ![alt text](pics/nas/image-42.png)
 
 #### 不同硬件的专用模型
 + 通过迅速结合预测延迟和准确度测量，我们可以找到专业化的模型(Specialized Models)。
 + 如图，针对不同硬件进行专业化后的模型，在不同硬件上运行速度也不一样，但是在对应硬件上延迟最低，因此我们需要针对不同硬件进行专业化NAS。
 
-![alt text](pics/image-43.png)
+![alt text](pics/nas/image-43.png)
 
 #### Once-for-All Network(OFA网络)
 + 对于每一次从头开始训练一个网络并获取延迟和准确性，成本较昂贵。
 + 因此可以训练一个OFA网络，OFA网络包含许多被稀疏激活的子网络，迭代从中挑选子网络以及权重（通常随机采样），再获取延迟和准确性进行训练，成本较便宜。
 + 关键思路是：一次训练，多重利用，以降低设计成本，适应不同的硬件约束，从而为新型硬件平台获取更大的子网络，为旧/性能较弱的硬件平台获取更小的子网络。
 
-![alt text](pics/image-44.png)
+![alt text](pics/nas/image-44.png)
 
 + 如何训练OFA网络呢？
     + 我们可以采用渐进式收缩的方法。对于不同的硬件平台，对应于OFA网络中的不同子网络，每一个子网络的卷积核大小、层数、通道数都不一样，采用渐进式收缩的方法，每一次收缩后对应于一个更小的子网络。
     + 例如图中，对于O1是四层，而对于O3是两层。
 
-    ![alt text](pics/image-45.png)
+    ![alt text](pics/nas/image-45.png)
 
 + 如下图，OFA网络用于各种设备时，延迟与Top-1准确率之间的关系。
 
-![alt text](pics/image-46.png)
+![alt text](pics/nas/image-46.png)
 
 ### Neural-hardware architecture co-search
 TBD

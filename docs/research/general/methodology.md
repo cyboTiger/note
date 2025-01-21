@@ -34,6 +34,5 @@
 
     一般而言，做实验用开山作的参数，否则自己调参成本比较高
 
-    wang xinyu: 做多模态大模型
-    chen zhuokun: model merging
- 
+
+![alt text](pics/papertree.png)
