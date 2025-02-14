@@ -4,9 +4,10 @@
 + [同上](https://www.cc98.org/topic/5827976)
 
 ### 大三下实习
++ [SJTU | linfeng zhang](www.zhanglinfeng.tech)
 + [SJTU | Jingwen Leng](https://www.cs.sjtu.edu.cn/~leng-jw/index.html)
 + [THU | Yu Wang](https://nicsefc.ee.tsinghua.edu.cn/index.html#research)
-+ []
++ [THU | Kaisheng Ma](https://group.iiis.tsinghua.edu.cn/~maks/index.html)
 
 ### 保研
 

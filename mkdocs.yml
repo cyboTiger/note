@@ -35,6 +35,8 @@ theme:
         name: Switch to light mode
       primary: black
       accent: lime
+  favicon: img/kagula.svg
+  logo: img/kagula.svg
 
 markdown_extensions:
   - toc:
@@ -124,7 +126,10 @@ nav:
       - LLM deployment (lec13): self_learn/efficientml/deploy.md
     - CSAPP: self_learn/csapp.md
     - 数学建模: self_learn/mathmodel.md
-    - 托福: self_learn/toefl/resource.md
+    - 托福: 
+      - 资源汇总: self_learn/toefl/resource.md
+      - 听力: self_learn/toefl/listening.md
+      - 口语: self_learn/toefl/speaking.md
   - Research:
     - General:
       - 意向lab: research/general/lab.md
@@ -147,6 +152,9 @@ nav:
   - Tools:
     - mkdocs使用: tools/mkdocs.md
     - huggingface🤗使用: tools/hf.md
+    - pytorch使用: tools/pytorch.md
+    - python库:
+      - tools/argparse.md
 
 
 extra_javascript:
