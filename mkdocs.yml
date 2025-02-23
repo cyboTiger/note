@@ -155,6 +155,9 @@ nav:
     - pytorch使用: tools/pytorch.md
     - python库:
       - tools/argparse.md
+      - tools/numpy.md
+      - tools/pypackage.md(unfinished)
+      - tools/tqdm.md
 
 
 extra_javascript:
