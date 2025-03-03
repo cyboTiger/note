@@ -154,10 +154,10 @@ nav:
     - huggingface🤗使用: tools/hf.md
     - pytorch使用: tools/pytorch.md
     - python库:
-      - tools/argparse.md
-      - tools/numpy.md
-      - tools/pypackage.md(unfinished)
-      - tools/tqdm.md
+      - argparse: tools/argparse.md
+      - numpy: tools/numpy.md
+      - python自定义模块: tools/pypackage.md
+      - 进度条可视化: tools/tqdm.md
 
 
 extra_javascript:
