@@ -153,6 +153,7 @@ nav:
     - mkdocs使用: tools/mkdocs.md
     - huggingface🤗使用: tools/hf.md
     - pytorch使用: tools/pytorch.md
+    - poetry管理安装包: tools/poetry.md
     - python库:
       - argparse: tools/argparse.md
       - numpy: tools/numpy.md
