@@ -80,6 +80,7 @@ nav:
     - index.md
   - 课程笔记:
     - courses/index.md
+    - 离散数学: courses/discrete.md
     - 数据结构基础: courses/FDS/FDS.md
     - 高级数据结构与算法分析:
       - courses/ADS/index.md 
@@ -135,8 +136,6 @@ nav:
       - 意向lab: research/general/lab.md
       - 学习资源: research/general/resource.md
       - 方法论: research/general/methodology.md
-      - 定期规划: research/general/roadmap.md
-      - 两周汇报: research/general/report.md
     - Paper:
       - survey on efficient/Multimodal LLM: research/paper/survey.md
       - LLaVA: research/paper/llava.md
@@ -149,6 +148,7 @@ nav:
     - 网球: misc/tennis.md
     - 反思: misc/reflections.md
     - 节日: misc/festival.md
+    - 动漫: misc/anime.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
     - huggingface🤗使用: tools/hf.md
