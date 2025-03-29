@@ -6,6 +6,12 @@
     <center><font size=4>读书当一意在书，游山水当一意在山水，乘兴所至，心无旁及。 </font></center>
     <p align="right"><font size=3>———— 钱穆 &nbsp; &nbsp; </font></p>
 
+    <center><font size=4>真正接受自己的无力感，是一种令人难以置信的解放。每当我格外紧张、为某件事沮丧，每当我觉得自己忘了自己是谁，想得到超过自己应得的东西，我就会重新调整自己，回忆成长的过程，回想当时的状况。这会让人看清事情的本质，让我记起自己真正重视的事情：家庭、乐趣、快乐、幸福、爱。</font></center>
+    <p align="right"><font size=3>———— Novak Djokovic &nbsp; &nbsp; </font></p>
+
+    <center><font size=4>请记住：能不能好好控制自己，去克服这些情绪，将决定你的生活质量。我的生活质量来自我身边的这些人，也来自于我对他们的爱。</font></center>
+    <p align="right"><font size=3>———— Novak Djokovic &nbsp; &nbsp; </font></p>
+
     <center><font size=4>我们都是活生生的人, 从小就被不由自主地教导用最小的付出获得最大的得到, 经常会忘记我们究竟要的是什么. 我承认我完美主义, 但我想每个人心中都有那一份求知的渴望和对真理的向往, "大学"的灵魂也就在于超越世俗, 超越时代的纯真和理想 -- 我们不是要讨好企业的毕业生, 而是要寻找改变世界的力量. </font></center>
     <p align="right"><font size=3>———— jyy &nbsp; &nbsp; </font></p>
 
