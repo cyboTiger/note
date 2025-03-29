@@ -30,6 +30,11 @@
 
     自主学习没有明确动机，需要自己创造动机
 
+### 提高专注力
++ 正念冥想
+    
+    德约的习惯，静下心来，让所有的想法都经过，不要有情绪的波动，接受它。然后发现问题所在。
+
 ## success
 [Sam Altman: how to be successful](https://blog.samaltman.com/how-to-be-successful)
 
