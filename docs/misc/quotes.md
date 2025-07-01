@@ -6,6 +6,9 @@
     <center><font size=4>读书当一意在书，游山水当一意在山水，乘兴所至，心无旁及。 </font></center>
     <p align="right"><font size=3>———— 钱穆 &nbsp; &nbsp; </font></p>
 
+    <center><font size=4>我们现在回忆这些青年人当年的脚步，不是歌颂什么虚幻的口号和运动， 而是认可那些在艰难困苦之中仍然顽强的寻找和实现人生的意义、“男儿当自强”的精神。</font></center>
+    <p align="right"><font size=3>———— 《习近平的七年知青岁月》陶海粟 &nbsp; &nbsp; </font></p>
+
     <center><font size=4>真正接受自己的无力感，是一种令人难以置信的解放。每当我格外紧张、为某件事沮丧，每当我觉得自己忘了自己是谁，想得到超过自己应得的东西，我就会重新调整自己，回忆成长的过程，回想当时的状况。这会让人看清事情的本质，让我记起自己真正重视的事情：家庭、乐趣、快乐、幸福、爱。</font></center>
     <p align="right"><font size=3>———— Novak Djokovic &nbsp; &nbsp; </font></p>
 

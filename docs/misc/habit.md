@@ -35,6 +35,11 @@
     
     德约的习惯，静下心来，让所有的想法都经过，不要有情绪的波动，接受它。然后发现问题所在。
 
+### 阅读
++ 习近平的阅读习惯
+
+    以一本书为主，同时寻找相关的书籍作为佐证，不断扩展阅读书中的知识。
+
 ## success
 [Sam Altman: how to be successful](https://blog.samaltman.com/how-to-be-successful)
 
