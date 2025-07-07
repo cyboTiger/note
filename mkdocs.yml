@@ -115,7 +115,10 @@ nav:
       - 第三章: self_learn/cs61a/ch3.md
       - 第四章: self_learn/cs61a/ch4.md
     - CS231n: self_learn/cs231n/cs231n.md
-    - MIT6.5940: 
+    - Parallel Computing: 
+      - self_learn/parallel/cs149/index.md
+      - CUDA: self_learn/parallel/cs149/cuda.md
+    - EfficientML: 
       - self_learn/efficientml/index.md
       - basics (lec1-2): self_learn/efficientml/basicDL.md
       - pruning/sparsity (lec3-4): self_learn/efficientml/prune.md
@@ -141,6 +144,7 @@ nav:
       - LLaVA: research/paper/llava.md
       - Attention: research/paper/attention.md
       - ZipVL: research/paper/zipvl.md
+      - FlashAttention: research/paper/flashattn.md
   - Miscellaneous:
     - quotes: misc/quotes.md
     - 习惯: misc/habit.md
@@ -149,6 +153,7 @@ nav:
     - 反思: misc/reflections.md
     - 节日: misc/festival.md
     - 动漫: misc/anime.md
+    - 装机: misc/pcconfig.md
   - Tools:
     - mkdocs使用: tools/mkdocs.md
     - huggingface🤗使用: tools/hf.md
