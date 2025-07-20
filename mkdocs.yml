@@ -118,6 +118,7 @@ nav:
     - Parallel Computing: 
       - self_learn/parallel/cs149/index.md
       - CUDA: self_learn/parallel/cs149/cuda.md
+      - performance: self_learn/parallel/cs149/performance.md
     - EfficientML: 
       - self_learn/efficientml/index.md
       - basics (lec1-2): self_learn/efficientml/basicDL.md

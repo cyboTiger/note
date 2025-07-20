@@ -15,6 +15,9 @@
     <center><font size=4>请记住：能不能好好控制自己，去克服这些情绪，将决定你的生活质量。我的生活质量来自我身边的这些人，也来自于我对他们的爱。</font></center>
     <p align="right"><font size=3>———— Novak Djokovic &nbsp; &nbsp; </font></p>
 
+    <center><font size=4>愤怒和不甘，只有通过俯瞰，才能化为力量。 </font></center>
+    <p align="right"><font size=3>———— 《夏日重现》 &nbsp; &nbsp; </font></p>
+
     <center><font size=4>我们都是活生生的人, 从小就被不由自主地教导用最小的付出获得最大的得到, 经常会忘记我们究竟要的是什么. 我承认我完美主义, 但我想每个人心中都有那一份求知的渴望和对真理的向往, "大学"的灵魂也就在于超越世俗, 超越时代的纯真和理想 -- 我们不是要讨好企业的毕业生, 而是要寻找改变世界的力量. </font></center>
     <p align="right"><font size=3>———— jyy &nbsp; &nbsp; </font></p>
 
