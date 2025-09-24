@@ -1,4 +1,4 @@
-site_name: 猪吃小虎's Note
+site_name: note
 site_url: https://cybotiger.github.io/note/
 site_author: cybotiger
 
@@ -99,6 +99,8 @@ nav:
     - 面向对象: courses/oop/oop.md
     - 计算机网络: courses/network.md
     - 数据要素市场: courses/data_market.md
+    - AI+生命科学: 
+      - 简介: courses/ai4bio/lec2.md
     - 期末复习: 
       - courses/final_review/index.md
       - 操作系统: courses/final_review/os.md
@@ -136,6 +138,9 @@ nav:
       - 听力: self_learn/toefl/listening.md
       - 口语: self_learn/toefl/speaking.md
   - Research:
+    - Basics: 
+      - research/foundation/index.md
+      - diffusion: research/foundation/diffusion.md
     - General:
       - 意向lab: research/general/lab.md
       - 学习资源: research/general/resource.md
@@ -152,7 +157,6 @@ nav:
     - 健身: misc/fitness.md
     - 网球: misc/tennis.md
     - 反思: misc/reflections.md
-    - 节日: misc/festival.md
     - 动漫: misc/anime.md
     - 装机: misc/pcconfig.md
   - Tools:
