@@ -28,3 +28,15 @@
 + child first , stealing continuation
 
 + continuation first, steal child
+
+## Techniques for reducing communication
++ Improving temporal locality by changing grid traversal order
+
++ Improving temporal locality by fusing loops
+
+    ![alt text](image-11.png)
+
++ Contention
+
+    Replicate contended resources (e.g., local copies, fine-grained locks)
+    Stagger access to contended resources
