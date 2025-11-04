@@ -99,7 +99,7 @@ nav:
     - 面向对象: courses/oop/oop.md
     - 计算机网络: courses/network.md
     - 数据要素市场: courses/data_market.md
-    - AI+生命科学: 
+    - AI+Bio: 
       - 简介: courses/ai4bio/lec2.md
     - 期末复习: 
       - courses/final_review/index.md
@@ -121,6 +121,7 @@ nav:
       - self_learn/parallel/cs149/index.md
       - CUDA: self_learn/parallel/cs149/cuda.md
       - performance: self_learn/parallel/cs149/performance.md
+      - communication: self_learn/parallel/cs149/cache_coherence.md
     - EfficientML: 
       - self_learn/efficientml/index.md
       - basics (lec1-2): self_learn/efficientml/basicDL.md
@@ -141,6 +142,7 @@ nav:
     - Basics: 
       - research/foundation/index.md
       - diffusion: research/foundation/diffusion.md
+      - Linear Attention: research/foundation/linear_attn.md
     - General:
       - 意向lab: research/general/lab.md
       - 学习资源: research/general/resource.md
@@ -163,7 +165,9 @@ nav:
     - mkdocs使用: tools/mkdocs.md
     - huggingface🤗使用: tools/hf.md
     - pytorch使用: tools/pytorch.md
-    - poetry管理安装包: tools/poetry.md
+    - uv管理安装包: tools/uv.md
+    - vim命令: tools/vim.md
+    - tmux命令: tools/tmux.md
     - python库:
       - argparse: tools/argparse.md
       - numpy: tools/numpy.md
