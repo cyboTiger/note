@@ -78,6 +78,8 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
+  - 系统与体系结构:
+    - arch/index.md
   - 课程笔记:
     - courses/index.md
     - 离散数学: courses/discrete.md
@@ -99,7 +101,7 @@ nav:
     - 面向对象: courses/oop/oop.md
     - 计算机网络: courses/network.md
     - 数据要素市场: courses/data_market.md
-    - AI+Bio: 
+    - AI&Bio: 
       - 简介: courses/ai4bio/lec2.md
     - 期末复习: 
       - courses/final_review/index.md
