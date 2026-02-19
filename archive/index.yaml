@@ -1,0 +1,101 @@
+
+nav:
+  - Home:
+    - index.md
+  - 系统与体系结构:
+    - arch/index.md
+  - 课程笔记:
+    - courses/index.md
+    - 离散数学: courses/discrete.md
+    - 数据结构基础: courses/FDS/FDS.md
+    - 高级数据结构与算法分析:
+      - courses/ADS/index.md 
+      - lec1 | AVL tree/Splay tree: courses/ADS/ads1.md
+      - lec2 | RedBlack tree/B+ tree: courses/ADS/ads2.md
+    - 数字逻辑设计: courses/logic/logic.md
+    - 数据库系统: 
+      - courses/DB/index.md
+      - 数据库简介: courses/DB/DB.md
+      - 索引: courses/DB/db10.md
+      - 查询处理: courses/DB/db11.md
+      - MiniSQL: courses/DB/minisql.md
+    - 计算机组成: 
+      - 第二章 Instruction: courses/CO/2_instruction.md
+      - 第三章 Arithmatic: courses/CO/3_arithmatic.md
+    - 面向对象: courses/oop/oop.md
+    - 计算机网络: courses/network.md
+    - 数据要素市场: courses/data_market.md
+    - AI&Bio: 
+      - 简介: courses/ai4bio/lec2.md
+    - 期末复习: 
+      - courses/final_review/index.md
+      - 操作系统: courses/final_review/os.md
+      - 计算机网络: courses/final_review/network.md
+      - 体系结构: courses/final_review/arch.md
+      - 计算理论: courses/final_review/toc.md
+  - 自学路线:
+    - self_learn/index.md
+    - CS50-ai: self_learn/ai50/ai50.md
+    - CS61A: 
+      - self_learn/cs61a/index.md
+      - 第一章: self_learn/cs61a/ch1.md
+      - 第二章: self_learn/cs61a/ch2.md
+      - 第三章: self_learn/cs61a/ch3.md
+      - 第四章: self_learn/cs61a/ch4.md
+    - CS231n: self_learn/cs231n/cs231n.md
+    - Parallel Computing: 
+      - self_learn/parallel/cs149/index.md
+      - CUDA: self_learn/parallel/cs149/cuda.md
+      - performance: self_learn/parallel/cs149/performance.md
+      - communication: self_learn/parallel/cs149/cache_coherence.md
+    - EfficientML: 
+      - self_learn/efficientml/index.md
+      - basics (lec1-2): self_learn/efficientml/basicDL.md
+      - pruning/sparsity (lec3-4): self_learn/efficientml/prune.md
+      - quantize (lec5-6): self_learn/efficientml/quantize.md
+      - NAS (lec7-8): self_learn/efficientml/nas.md
+      - Knowledge Distillation (lec9): self_learn/efficientml/kd.md
+      - TinyML (lec10-11): self_learn/efficientml/tinyml.md
+      - Transformer (lec12): self_learn/efficientml/transformer.md
+      - LLM deployment (lec13): self_learn/efficientml/deploy.md
+    - CSAPP: self_learn/csapp.md
+    - 数学建模: self_learn/mathmodel.md
+    - 托福: 
+      - 资源汇总: self_learn/toefl/resource.md
+      - 听力: self_learn/toefl/listening.md
+      - 口语: self_learn/toefl/speaking.md
+  - Research:
+    - Basics: 
+      - research/foundation/index.md
+      - diffusion: research/foundation/diffusion.md
+      - Linear Attention: research/foundation/linear_attn.md
+    - General:
+      - 意向lab: research/general/lab.md
+      - 学习资源: research/general/resource.md
+      - 方法论: research/general/methodology.md
+    - Paper:
+      - survey on efficient/Multimodal LLM: research/paper/survey.md
+      - LLaVA: research/paper/llava.md
+      - Attention: research/paper/attention.md
+      - ZipVL: research/paper/zipvl.md
+      - FlashAttention: research/paper/flashattn.md
+  - Miscellaneous:
+    - quotes: misc/quotes.md
+    - 习惯: misc/habit.md
+    - 健身: misc/fitness.md
+    - 网球: misc/tennis.md
+    - 反思: misc/reflections.md
+    - 动漫: misc/anime.md
+    - 装机: misc/pcconfig.md
+  - Tools:
+    - mkdocs使用: tools/mkdocs.md
+    - huggingface🤗使用: tools/hf.md
+    - pytorch使用: tools/pytorch.md
+    - uv管理安装包: tools/uv.md
+    - vim命令: tools/vim.md
+    - tmux命令: tools/tmux.md
+    - python库:
+      - argparse: tools/argparse.md
+      - numpy: tools/numpy.md
+      - python自定义模块: tools/pypackage.md
+      - 进度条可视化: tools/tqdm.md
