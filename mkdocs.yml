@@ -9,9 +9,10 @@ repo_name: cyboTiger/note
 theme:
   name: material
   features:
-    - navigation.tracking  #锚点跟踪
-    - navigation.tabs
-    - navigation.indexes
+    - navigation.tracking  # 锚点跟踪
+    - navigation.tabs # 顶部导航
+    - navigation.sections # 按 section 展开侧栏
+    - navigation.indexes # index 页面不显示在侧栏
     - navigation.top
     - search.suggest
     - search.highlight
@@ -80,19 +81,29 @@ nav:
     - index.md
   - 系统与体系结构:
     - arch/index.md
-  - 算法与数据结构:
-    - algo/index.md
-  - 高性能计算:
-    - hpc/index.md
-  - 网络:
-    - network/index.md
   - 语言和编译器:
     - pl/index.md
-    - Rust: pl/rust.md
+    - 语言:
+      - Rust: pl/lang/rust.md
+    - 框架:
+      - PyTorch: pl/lang/pytorch.md
+  - 算法与数据结构:
+    - algo/index.md
+    - 树: 
+      - trie: algo/trie.md
+  - 高性能计算:
+    - hpc/index.md
+  - 网络与存储:
+    - network/index.md
   - 科研:
     - research/index.md
+  - 数学:
+    - math/index.md
   - 其他:
     - other/index.md
+    - 工具:
+      - other/tool/docker.md
+      - other/tool/linux-cmd.md
 
 
 extra_javascript:
