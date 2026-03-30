@@ -1,4 +1,13 @@
 ## 容器构建和运行选项
+### 镜像构建
+```bash
+docker build \
+    -f /path/to/Dockerfile \
+    -t mylatest:img_tag .
+    # . 表示以当前目录为构建上下文
+```
+
+### 容器运行
 ```bash
 docker run # 创建并运行容器
 -it # -i + -t = interactive terminal

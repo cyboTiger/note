@@ -85,8 +85,15 @@ nav:
     - pl/index.md
     - 语言:
       - Rust: pl/lang/rust.md
+      - Python: pl/lang/python.md
+      - Cuda: pl/lang/cuda.md
     - 框架:
       - PyTorch: pl/lang/pytorch.md
+      - Triton-lang: pl/lang/triton.md
+    - 编译:
+      - CMake: pl/compile/cmake.md
+      - Make: pl/compile/make.md
+      - C Compiler: pl/compile/ccompiler.md
   - 算法与数据结构:
     - algo/index.md
     - 树: 
@@ -103,7 +110,9 @@ nav:
     - other/index.md
     - 工具:
       - other/tool/docker.md
-      - other/tool/linux-cmd.md
+      - other/tool/linux_cmd.md
+      - other/tool/python_pkg.md
+      - other/tool/vim.md
 
 
 extra_javascript:

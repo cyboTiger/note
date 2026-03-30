@@ -10,3 +10,6 @@
 `dim` 为重复的维度。直接在对应元素之后重复。
 
 `output_size` 为 output 在该维度的大小（似乎不太必要）
+
+## `torch.gather`
+
