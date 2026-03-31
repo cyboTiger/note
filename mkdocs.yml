@@ -59,6 +59,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.details
+  - pymdownx.blocks.caption # figure caption
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -124,3 +125,6 @@ extra_javascript:
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   # for katex
+
+# strict: false
+# use_directory_urls: true  # 保持默认即可
