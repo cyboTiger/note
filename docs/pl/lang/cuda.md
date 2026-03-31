@@ -13,7 +13,7 @@
 !!! info "source"
     https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html
 
-![gpu-cpu-system](/assets/img/cuda/gpu-cpu-system-diagram.png)
+![gpu-cpu-system](../../assets/img/cuda/gpu-cpu-system-diagram.png)
 
 nvidia gpu 由三个部分组成：
 
