@@ -58,3 +58,14 @@ GPU 由三个部分组成：
 系统中的 gpu 和 cpu 内存用同一套虚拟地址编址
 
 cpu 代码只能访问 cpu 内存，cpu 代码只能访问 cpu 内存；但 CUDA 提供接口使得两个设备上的代码都可以分配彼此的内存
+
+## basic cuda runtime api
+`cudaMemcpy` 是同步的
+
+`cudaDeviceSynchronize`
+
+`cudaMallocManaged` for unified memory API
+
+`cudaMallocHost` `cudaFreeHost` `cudaMalloc` `cudaFree` for explicit memory management
+
+`__syncthreads()` syncs all threads in a thread block
