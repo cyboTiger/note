@@ -114,6 +114,7 @@ nav:
       - other/tool/linux_cmd.md
       - other/tool/python_pkg.md
       - other/tool/vim.md
+      - other/tool/cicd.md
 
 
 extra_javascript:

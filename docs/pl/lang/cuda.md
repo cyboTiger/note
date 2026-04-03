@@ -54,18 +54,138 @@ GPU 由三个部分组成：
 
 ---
 
-### unified memory
+## 2.1 programming cuda on gpus
+
+### memory management
+#### explicit
+使用显示内存管理通常性能更好，因为你可以控制何时进行 memory transfer，以便和计算重叠
+
+#### unified memory
 系统中的 gpu 和 cpu 内存用同一套虚拟地址编址
 
 cpu 代码只能访问 cpu 内存，cpu 代码只能访问 cpu 内存；但 CUDA 提供接口使得两个设备上的代码都可以分配彼此的内存
 
-## basic cuda runtime api
-`cudaMemcpy` 是同步的
+---
 
-`cudaDeviceSynchronize`
-
-`cudaMallocManaged` for unified memory API
+`cudaMallocManaged` for unified memory API，按此分配的变量内存可以直接传给 cpu 函数，也可以直接传给 cuda kernel；依然使用 `cudaFree` 来释放
 
 `cudaMallocHost` `cudaFreeHost` `cudaMalloc` `cudaFree` for explicit memory management
 
+`cudaMemcpy` 是同步的，异步见 `cudaMemcpyAsync`
+
+`cudaDeviceSynchronize` 在 cpu 和 gpu 间同步，阻塞 cpu 直到 gpu kernel 结束后再继续；如果有多个 stream，会等待所有 stream 完成后再执行接下来的 cpu 代码
+
 `__syncthreads()` syncs all threads in a thread block
+
+### grid 和 block 的用法
+```cpp
+int main()
+{
+    ...
+    dim3 grid(16,16);
+    dim3 block(8,8);
+    MatAdd<<<grid, block>>>(A, B, C);
+    ...
+}
+```
+几个重要的变量：
++ `threadIdx` 有 `.x` `.y` `.z`，范围在 `0` 到 `blockDim.x-1`, `blockDim.y-1`, `blockDim.z-1`
++ `blockDim` 即 block 在三个维度的 thread 数量
++ `blockIdx` 即 block 在 grid 中的坐标
++ `gridDim` 即 grid 在三个维度的 block 数量
+
+### runtime initialization
+不太懂，以后再看 https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html#runtime-initialization
+
+`cudaInitDevice` `cudaSetDevice` `cudaDeviceReset`
+
+### error check
+```cpp
+#define CUDA_CHECK(expr_to_check) do {            \
+    cudaError_t result  = expr_to_check;          \
+    if(result != cudaSuccess)                     \
+    {                                             \
+        fprintf(stderr,                           \
+                "CUDA Runtime Error: %s:%i:%d = %s\n", \
+                __FILE__,                         \
+                __LINE__,                         \
+                result,\
+                cudaGetErrorString(result));      \
+    }                                             \
+} while(0)
+
+// use
+CUDA_CHECK(cudaMalloc(&devA, vectorLength*sizeof(float)));
+```
+
+### error state
+每个 cpu thread 都有一个 cuda error 状态量
+
+The CUDA runtime maintains a `cudaError_t` state for each **host thread**. The value defaults to `cudaSuccess` and is overwritten whenever an error occurs. `cudaGetLastError` returns current error state and then resets it to `cudaSuccess`. Alternatively, `cudaPeekLastError` returns error state without resetting it.
+
+!!! note "cudaSuccess 不等于 kernel 顺利执行"
+    他只是证明了 kernel launch 的 block/grid 配置，以及传递的参数没问题
+
+因为 cuda kernel 是异步发射的，所以 cudaError 是异步传递的
+
+The CUDA error state is set and overwritten whenever an error occurs. This means that errors which occur during the execution of asynchronous operations will only be reported when the error state is examined next
+
+如果某次 kernel 或者 cuda runtime api 的错误没有调用 `cudaGetLastError` 及时清理错误，之后每一次调用 cuda runtime api 都会返回错误
+
+### error log
+通过环境变量 CUDA_LOG_FILE 来更好的检测报错
+
+```bash
+$ env CUDA_LOG_FILE=cudaLog.txt ./errlog
+CUDA Runtime Error: /home/cuda/intro-cpp/errorLogIllustration.cu:24:1 = invalid argument
+$ cat cudaLog.txt
+[12:46:23.854][137216133754880][CUDA][E] One or more of block dimensions of (4096,1,1) exceeds corresponding maximum value of (1024,1024,64)
+[12:46:23.854][137216133754880][CUDA][E] Returning 1 (CUDA_ERROR_INVALID_VALUE) from cuLaunchKernel
+```
+
+### 函数/变量前缀修饰符
+#### 函数
++ `__global__` 表示 kernel 入口；
+
++ `__device__` 表示该函数应该编译为 gpu 二进制码，而且可以被其他 `__device__` 或 `__global__` 修饰函数调用
+
+#### 变量
++ `__device__` 表示变量在 gpu 的 global memory 中
++ `__constant__` 表示变量在 gpu 的 constant memory 中
++ `__managed__` 表示变量在 unified memory 中
++ `__shared__` 表示变量在 gpu 的 shared memory 中
+
+> Constant memory has **a grid scope** and is accessible for the lifetime of the application. The constant memory resides on the device and is **read-only** to the kernel. As such, it must be declared and initialized on the host with the `__constant__` specifier, **outside any function**.
+
+### thread block cluster
+![grid-of-clusters](../../assets/img/cuda/grid-of-clusters.png)
+
+thread blocks in a cluster are also guaranteed to be co-scheduled on a GPU Processing Cluster (GPC) in the GPU
+
+Because the thread blocks are scheduled simultaneously and within a single GPC, threads in different blocks but within the same cluster can communicate and synchronize with each other using software interfaces provided by **Cooperative Groups** `cluster.sync()`. Threads in clusters can access the shared memory of all blocks in the cluster, which is referred to as **distributed shared memory**
+
+A thread block cluster can be enabled in a kernel either using a compile-time kernel attribute using `__cluster_dims__(X,Y,Z)` or using the CUDA kernel launch API `cudaLaunchKernelEx`.
+
+The cluster size using kernel attribute is fixed at compile time
+
+```cpp
+// Compile time cluster size 2 in X-dimension and 1 in Y and Z dimension
+__global__ void __cluster_dims__(2, 1, 1) cluster_kernel(float *input, float* output)
+{
+    ...
+}
+
+int main()
+{
+    float *input, *output;
+    // Kernel invocation with compile time cluster size
+    dim3 threadsPerBlock(16, 16);
+    dim3 numBlocks(N / threadsPerBlock.x, N / threadsPerBlock.y);
+
+    // The grid dimension is not affected by cluster launch, and is still enumerated
+    // using number of blocks.
+    // The grid dimension must be a multiple of cluster size.
+    cluster_kernel<<<numBlocks, threadsPerBlock>>>(input, output);
+}
+
+```
