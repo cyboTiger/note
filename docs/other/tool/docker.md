@@ -1,3 +1,6 @@
+!!! info "official documentation"
+    https://docs.docker.com/reference/cli/docker/
+
 ## 容器构建和运行选项
 ### 镜像构建
 ```bash
@@ -60,6 +63,9 @@ sglang generate \
 ```bash
 docker logs zrh-sgl
 docker cp zrh-sgl:/app/images/photo.jpg . # 将图片拷贝到宿主机目录
+
+docker ps -a # list all containers
+docker ps -f "name=zrh" # 根据条件来筛选
 ```
 
 ### 选项

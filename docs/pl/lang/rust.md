@@ -1,7 +1,112 @@
+## Cargo：Rust 工具链
+cargo 是 rust 代码的包管理工具，包括了包管理器（python 的 pip）、编译器 rustc 等等，“从项目的建立、构建到测试、运行直至部署，为 Rust 项目的管理提供尽可能完整的手段“
+### 新建项目
+```bash
+$ cargo new world_hello
+$ cd world_hello
+
+# 得到以下项目文件夹
+$ tree
+.
+├── .git
+├── .gitignore
+├── Cargo.toml
+└── src
+    └── main.rs
+```
+
+### 构建可执行文件 & 运行项目
+```rust
+// 编译得到 binary
+cargo build
+// build + ./target/debug/world_hello
+cargo run
+```
+
+cargo 构建的二进制文件会存放在 `target/debug/` 文件夹下；默认的构建模式是 debug 模式，这是没有任何编译优化的模式，优点是编译速度快，缺点是生成二进制运行速度慢；如果想要编译生成高性能二进制码，可以指定 release 模式 `cargo build --release` `cargo run --release` 
+
+构建后的项目结构如下，这里只显示了 3 层
+```bash
+.
+├── Cargo.lock
+├── Cargo.toml
+├── src
+│   └── main.rs
+└── target
+    ├── CACHEDIR.TAG
+    ├── debug
+    │   ├── build
+    │   ├── deps
+    │   ├── examples
+    │   ├── incremental
+    │   ├── play-rust
+    │   └── play-rust.d
+    └── release
+        ├── build
+        ├── deps
+        ├── examples
+        ├── incremental
+        ├── play-rust
+        └── play-rust.d
+```
+
 ## 命名规范
 + https://course.rs/practice/naming.html
 
 ## 变量绑定/解绑
+### 变量可变性(mutable)
+Rust 变量默认是不可变的，可变属性需要声明
+```rust
+fn main() {
+    // wrong
+    let x = 5;
+    x = 6;
+    // right
+    let mut y = 5;
+    y = 6;
+}
+```
+### 变量解构
+`let` 表达式不仅仅用于变量的绑定，还能进行复杂变量的解构：从一个相对复杂的变量中，匹配出该变量的一部分内容：
+```rust
+fn main() {
+    let (a, mut b): (bool,bool) = (true, false);
+    // a = true,不可变; b = false，可变
+    println!("a = {:?}, b = {:?}", a, b);
+
+    b = true;
+    assert_eq!(a, b);
+}
+```
+
+Rust 的解构式赋值左值可以是结构体、元组、切片：
+
+```rust
+struct Struct {
+    e: i32
+}
+
+fn main() {
+    let (a, b, c, d, e);
+
+    (a, b) = (1, 2);
+    // _ 代表匹配一个值，但是我们不关心具体的值是什么，因此没有使用一个变量名而是使用了 _
+    [c, .., d, _] = [1, 2, 3, 4, 5];
+    Struct { e, .. } = Struct { e: 5 };
+
+    assert_eq!([1, 2, 1, 4, 5], [a, b, c, d, e]);
+}
+```
+### 常量 constant
+常量的值在编译时确定，使用 const 关键字来声明，类型必须标注清楚；不可以添加 `mut` 前缀；
+
+```rust 
+const MAX_POINTS: u32 = 100_000;
+```
+
+常量可以在**任意作用域内**声明，包括全局作用域，在声明的作用域内，常量在程序运行的整个过程中都有效。对于需要在多处代码共享一个不可变的值时非常有用，例如游戏中允许玩家赚取的最大点数或光速。
+
+
 ### 变量遮蔽(shadowing)
 Rust 允许声明相同的变量名，之后的声明遮蔽掉之前的声明，涉及一次内存对象再分配，而非修改同一内存的值
 
