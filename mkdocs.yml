@@ -21,7 +21,7 @@ theme:
     - content.code.copy
   language: zh
   font:
-    text: LXGW WenKai GB Screen
+    text: Roboto
     code: JetBrains Mono
   palette:
     - scheme: default
@@ -34,7 +34,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-      primary: black
+      primary: green
       accent: lime
   favicon: assets/img/kagula.svg
   logo: assets/img/kagula.svg
@@ -80,6 +80,14 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
+  - 人工智能:
+    - ai/index.md
+    - Attention:
+      - Flash Attention: ai/attention/flash_attn.md
+      - Flex Attention: ai/attention/flex_attn.md
+    - 推理引擎:
+      - SGLang: ai/inference/sglang.md
+    - 开源模型架构: ai/model_arch.md
   - 系统与体系结构:
     - arch/index.md
   - 语言和编译器:
@@ -100,16 +108,18 @@ nav:
     - algo/index.md
     - 数据结构: algo/ds.md
     - 并行方法: algo/parallel.md
-    - Flash Attention: algo/flash_attn.md
   - 高性能计算:
     - hpc/index.md
   - 网络与存储:
     - network/index.md
     - torch.distrbuted: network/torch_distributed.md
+  - 具身智能:
+    - robotics/index.md
   - 科研:
     - research/index.md
   - 数学:
     - math/index.md
+    - 反向传播算法: math/backprop.md
   - 其他:
     - other/index.md
     - 工具:
@@ -130,6 +140,7 @@ extra_javascript:
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   # for katex
+  - stylesheets/extra.css
 
 # strict: false
 # use_directory_urls: true  # 保持默认即可

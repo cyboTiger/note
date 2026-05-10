@@ -1,3 +1,9 @@
+!!! info "cuda runtime api 文档"
+    https://docs.nvidia.com/cuda/cuda-runtime-api
+
+!!! info "CUDA GPU Compute Capability"
+    https://developer.nvidia.com/cuda/gpus
+
 ## nvcc 编译选项
 `-arch=sm_XX`：为指定的 GPU 架构生成二进制代码（SASS）
 
@@ -297,6 +303,8 @@ atomicAdd(dst_smem + dst_offset, 1);
 ```
 
 #### example using distributed shared memory
+下面是一段统计直方图每个桶的元素数量的 cuda 程序
+
 ??? note "histogram program"
 
     ```cpp
@@ -491,3 +499,77 @@ block 或者 cluster 内的线程可以进行同步；grid 之内的线程没有
 ### Kernel Launch and Occupancy
 TBD
 
+## 2.3. Asynchronous Execution
+`cudaDeviceSynchronize()` 用于在 host 端与 gpu 端进行同步，保证先前的 gpu 操作（包括 kernel 和各种 runtime API 调用）均已完成
+
+### CUDA Streams
+#### 创建与销毁、发射操作
+```cpp
+cudaStream_t stream;        // Stream handle
+cudaStreamCreate(&stream);  // Create a new stream
+
+// stream based operations ...
+
+cudaStreamDestroy(stream);  // Destroy the stream
+```
+
+如果需要指定 kernel 和 memory transfer 的 stream，用法如下：
+
+```cpp
+kernel<<<grid, block, shared_mem_size, stream>>>(...);
+
+// Copy `size` bytes from `src` to `dst` in stream `stream`
+cudaMemcpyAsync(dst, src, size, cudaMemcpyHostToDevice, stream);
+```
+
+> 如果要在 cpu 和 cuda gpu 之间使用 `cudaMemcpyAsync` 传数据，cpu 端必须是 pinned and page-locked buffer；否则传输会退化成同步操作，无法与之后的 cpu 操作 overlap；
+
+> 可以 `cudaMallocHost` 来分配专门用于和 cuda gpu 交换的 buffer
+
+#### Stream Synchronization
+可以通过 `cudaStreamSynchronize` 来进行同步；`cudaStreamQuery` 来查询 stream 状态
+
+```cpp
+cudaStreamSynchronize(stream);
+
+// Have a peek at the stream
+// returns cudaSuccess if the stream is empty
+// returns cudaErrorNotReady if the stream is not empty
+cudaError_t status = cudaStreamQuery(stream);
+
+switch (status) {
+    case cudaSuccess:
+        // The stream is empty
+        std::cout << "The stream is empty" << std::endl;
+        break;
+    case cudaErrorNotReady:
+        // The stream is not empty
+        std::cout << "The stream is not empty" << std::endl;
+        break;
+    default:
+        // An error occurred - we should handle this
+        break;
+};
+```
+
+### CUDA Events
+
+### Callback Functions from Streams
+
+## 2.4 Unified and System Memory
+
+
+## 2.5 NVCC compiler
+NVCC 属于静态编译器，负责 c/cpp/cuda 代码的 AOT 编译；NVRTC 属于动态编译器，负责在运行时编译，即 JIT 编译
+
+nvcc 会将 c/cpp host code 分发给宿主编译器进行编译；将 cuda device code 分发给 nvcc 自己进行编译得到指定的 ptx assembly code 和 cubin binary code
+
+### nvcc 基本工作流
+
+basic compilation workflow:
+
+![nvcc-flow](../../assets/img/cuda/nvcc-flow.png)
+
+compilation workflow with multiple PTX and Cubin architectures:
+
+![nvcc-flow-multi-archs](../../assets/img/cuda/nvcc-flow-multi-archs.png)
