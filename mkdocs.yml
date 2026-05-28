@@ -34,7 +34,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-      primary: green
+      primary: indigo
       accent: lime
   favicon: assets/img/kagula.svg
   logo: assets/img/kagula.svg

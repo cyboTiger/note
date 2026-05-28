@@ -1,4 +1,6 @@
 # 反向传播推导
+由于写 triton kernel 时需要自定义 backward，很多分块反向传播求梯度的过程比较复杂。
+
 本文尝试罗列不同算子的反向传播推导。约定：所有向量默认为列向量。对于标量 $L$（通常是 Loss），$\frac{\partial L}{\partial \mathbf{x}}$ 的形状与 $\mathbf{x}$ 保持一致。
 
 ## 标量积（内积）
@@ -70,6 +72,30 @@ $$\frac{\partial y}{\partial x}=\frac{e^{-x}}{(1+e^{-x})^2}=x(1-x)$$
 ---
 
 $$\frac{\partial L}{\partial X} = \frac{\partial L}{\partial Y} \odot X \odot (\mathbf{1}-X) $$
+
+### SiLU
+Swish 函数由 Google 提出，定义为：
+
+$$ f(x) = x \cdot \sigma(\beta x) $$
+
+其中 $\sigma(z) = \frac{1}{1+e^{-z}}$ 是 Sigmoid 函数。当 $\beta = 1$ 时，它被称为 SiLU。
+
+令 $f(x) = x \cdot \sigma(x)$（以 SiLU 为例，即 $\beta=1$）
+
+$$ f'(x) = 1 \cdot \sigma(x) + x \cdot \sigma(x)(1 - \sigma(x)) $$
+
+$$ f'(x) = \sigma(x) + f(x)(1 - \sigma(x)) $$
+
+$$ f'(x) = f(x) + \sigma(x)(1 - f(x)) $$
+
+矩阵形式
+
+$$ \frac{\partial L}{\partial X} = G \odot f'(X) = G \odot (\sigma(X) (1 + X(1 - \sigma(X)))) $$
+
+### Swish
+$$ \frac{\partial L}{\partial x} = g \cdot [\beta \cdot f(x) + \sigma(\beta x)(1 - \beta \cdot f(x))] $$
+
+$$ \frac{\partial L}{\partial \beta} = g \cdot [x^2 \cdot \sigma(\beta x)(1 - \sigma(\beta x))] $$
 
 ## Normalization
 ### RMSNorm
