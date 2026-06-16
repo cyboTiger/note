@@ -5,6 +5,7 @@ module 就是一个 .py 文件；
 在一个 py 文件中 import module 时，interpreter 会先在 built-in module 里找这个名字，可通过 `sys.builtin_module_names` 查看；如果没找到，则从 `sys.path` 里的文件夹中的文件寻找；
 
 sys.path 从 3 个位置初始化：
+
 + 当运行 `python xx.py` 时，从 `xx.py` 所在文件夹寻找；当运行 python 时，从当前 terminal 所在文件夹寻找
 
 + 通过环境变量 `PYTHONPATH` 寻找
