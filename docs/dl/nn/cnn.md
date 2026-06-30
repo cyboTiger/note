@@ -1,0 +1,1 @@
+做 cs231n 作业时明白了一个很有意思的点：cnn 的每一个 filter 都是对输入图像的特征提取，也可以说是 augmentation；这就有点类似于针对不同 task 训练的 vision encoder，比如 dino、sam、clip

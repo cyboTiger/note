@@ -1,4 +1,8 @@
 ## python module and package
+
+!!! info "reference"
+    https://docs.python.org/3/tutorial/modules.html#
+
 module 就是一个 .py 文件；
 
 ### The Module Search Path

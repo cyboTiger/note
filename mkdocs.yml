@@ -80,46 +80,37 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
-  - 人工智能:
-    - ai/index.md
-    - Attention:
-      - Flash Attention: ai/attention/flash_attn.md
-      - Flex Attention: ai/attention/flex_attn.md
-    - 推理引擎:
-      - SGLang: ai/inference/sglang.md
-    - 开源模型架构: ai/model_arch.md
-  - 系统与体系结构:
-    - arch/index.md
-  - 语言和编译器:
-    - pl/index.md
-    - 语言:
-      - Rust: pl/lang/rust.md
-      - Python: pl/lang/python.md
-      - Cuda: pl/lang/cuda.md
-    - 框架:
-      - PyTorch: pl/lang/pytorch.md
-      - Triton-lang: pl/lang/triton.md
-    - 编译:
-      - CMake: pl/compile/cmake.md
-      - Make: pl/compile/make.md
-      - C Compiler: pl/compile/ccompiler.md
-      - GDB: pl/compile/gdb.md
-  - 算法与数据结构:
-    - algo/index.md
-    - 数据结构: algo/ds.md
-    - 并行方法: algo/parallel.md
-  - 高性能计算:
-    - hpc/index.md
-  - 网络与存储:
-    - network/index.md
-    - torch.distrbuted: network/torch_distributed.md
-  - 具身智能:
-    - robotics/index.md
-  - 科研:
-    - research/index.md
   - 数学:
     - math/index.md
-    - 反向传播算法: math/backprop.md
+    - 反向传播: math/backprop.md
+  - 深度学习:
+    - dl/index.md
+    - Attention:
+      - Flash Attention: dl/attention/flash_attn.md
+      - Flex Attention: dl/attention/flex_attn.md
+    - 神经网络架构:
+      - CNN: dl/nn/cnn.md
+    - 推理:
+      - SGLang: dl/inference/sglang.md
+    - 训练:
+      - 优化器: dl/training/optim.md
+      - fsdp: dl/training/fsdp.md
+  - MLSys:
+    - torch distributed: sys/torch_distributed.md
+    - 编译器:
+      - 编程语言:
+        - Rust: sys/pl/lang/rust.md
+        - Python: sys/pl/lang/python.md
+        - Cuda: sys/pl/lang/cuda.md
+        - PyTorch: sys/pl/lang/pytorch.md
+        - Triton-lang: sys/pl/lang/triton.md
+      - 编译工具链:
+        - CMake: sys/pl/compile/cmake.md
+        - Make: sys/pl/compile/make.md
+        - C Compiler: sys/pl/compile/ccompiler.md
+        - GDB: sys/pl/compile/gdb.md
+  - 具身智能:
+    - robotics/index.md
   - 其他:
     - other/index.md
     - 工具:

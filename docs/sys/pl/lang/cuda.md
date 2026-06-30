@@ -19,8 +19,8 @@
 !!! info "source"
     https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html
 ### hardware model
-![gpu-cpu-system](../../assets/img/cuda/gpu-cpu-system-diagram.png#only-light){width=80%}
-![gpu-cpu-system](../../assets/img/cuda/gpu-cpu-system-diagram-dark.png#only-dark){width=80%}
+![gpu-cpu-system](../../../assets/img/cuda/gpu-cpu-system-diagram.png#only-light){width=80%}
+![gpu-cpu-system](../../../assets/img/cuda/gpu-cpu-system-diagram-dark.png#only-dark){width=80%}
 
 ### 硬件与编程模型的映射
 cuda kernel 由 thread 执行，thread 组成 thread block，thread block 组成 grid；
@@ -164,7 +164,7 @@ $ cat cudaLog.txt
 > Constant memory has **a grid scope** and is accessible for the lifetime of the application. The constant memory resides on the device and is **read-only** to the kernel. As such, it must be declared and initialized on the host with the `__constant__` specifier, **outside any function**.
 
 ### thread block cluster
-![grid-of-clusters](../../assets/img/cuda/grid-of-clusters.png)
+![grid-of-clusters](../../../assets/img/cuda/grid-of-clusters.png)
 
 thread blocks in a cluster are also guaranteed to be co-scheduled on a GPU Processing Cluster (GPC) in the GPU
 
@@ -429,7 +429,7 @@ shared memory 在设计上不同，被分为 32 个 bank，相邻的 32-bit (4-b
 
 ???+ note "不同步长的 shared memory 访问模式"
     <figure markdown="span">
-    ![strided-shared-memory-accesses](../../assets/img/cuda/examples-of-strided-shared-memory-accesses.png){ width="300" }
+    ![strided-shared-memory-accesses](../../../assets/img/cuda/examples-of-strided-shared-memory-accesses.png){ width="300" }
     <figcaption>
         Left<br>
             stride: one 32-bit word (no bank conflict). <br>
@@ -568,8 +568,8 @@ nvcc 会将 c/cpp host code 分发给宿主编译器进行编译；将 cuda devi
 
 basic compilation workflow:
 
-![nvcc-flow](../../assets/img/cuda/nvcc-flow.png)
+![nvcc-flow](../../../assets/img/cuda/nvcc-flow.png)
 
 compilation workflow with multiple PTX and Cubin architectures:
 
-![nvcc-flow-multi-archs](../../assets/img/cuda/nvcc-flow-multi-archs.png)
+![nvcc-flow-multi-archs](../../../assets/img/cuda/nvcc-flow-multi-archs.png)
