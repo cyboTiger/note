@@ -97,6 +97,8 @@ nav:
       - fsdp: dl/training/fsdp.md
   - MLSys:
     - torch distributed: sys/torch_distributed.md
+    - 量化:
+      - Quant VideoGen: sys/quant/qvg.md
     - 编译器:
       - 编程语言:
         - Rust: sys/pl/lang/rust.md
