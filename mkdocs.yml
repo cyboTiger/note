@@ -113,6 +113,7 @@ nav:
         - GDB: sys/pl/compile/gdb.md
   - 具身智能:
     - robotics/index.md
+    - robotics/ros2.md
   - 其他:
     - other/index.md
     - 工具:

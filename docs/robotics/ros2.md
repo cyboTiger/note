@@ -22,14 +22,16 @@
 其中，install 目录结构一般会有 setup 脚本、每个包的子文件夹（其中包含 lib 和 share 目录）
 
 ### 使用 rclcpp 编写节点
-第一步，进入src目录，创建功能包，编译类型选择 `ament-cmake`
+#### 第一步
+进入src目录，创建功能包，编译类型选择 `ament-cmake`
 
 ```bash
 cd chapt2_ws/src
 ros2 pkg create example_cpp --build-type ament_cmake --dependencies rclcpp
 ```
 
-第二步，在包目录的src目录下，创建节点源文件 `node_01.cpp`，实现节点逻辑
+#### 第二步
+在包目录的src目录下，创建节点源文件 `node_01.cpp`，实现节点逻辑
 
 ```bash
 └── src
@@ -56,7 +58,11 @@ int main(int argc, char **argv)
 }
 ```
 
-第三步，修改 `CmakeLists.txt`
+#### 第三步
+
+修改 `CmakeLists.txt`
+
+> ament_cmake 编写文档说明 https://docs.ros.org/en/lyrical/How-To-Guides/Ament-CMake-Documentation.html
 
 cmake 文件整体结构如下
 
@@ -97,7 +103,7 @@ ament_package()
 
 ```
 ### 使用 rclpy 编写节点
-第一步
+
 ```bash
 cd chapt2/chapt2_ws/src/
 ros2 pkg create example_py  --build-type ament_python --dependencies rclpy
