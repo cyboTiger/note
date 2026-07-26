@@ -117,12 +117,13 @@ nav:
   - 其他:
     - other/index.md
     - 工具:
-      - other/tool/docker.md
-      - other/tool/linux_cmd.md
-      - other/tool/python_pkg.md
-      - other/tool/vim.md
-      - other/tool/cicd.md
-      - other/tool/vscode.md
+      - docker: other/tool/docker.md
+      - linux: other/tool/linux_cmd.md
+      - python package: other/tool/python_pkg.md
+      - vim: other/tool/vim.md
+      - CI/CD: other/tool/cicd.md
+      - vscode: other/tool/vscode.md
+      - Make: other/tool/make.md
 
 
 extra_javascript:
