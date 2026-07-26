@@ -152,3 +152,18 @@ def main(args=None):
 
 ### 编译节点
 使用colcon编译节点，并source setup文件后，该节点就会注册到ros系统中，可以在ros cli中使用
+
+### 添加ROS API
+需要在功能包的CMakelists.txt中添加
+
+```cpp
+find_package(newpkg REQUIRED)
+
+target_link_libraries(target pkg1::pkg1 ... newpkg::newpkg)
+```
+
+然后在package.xml中添加
+
+```xml
+<depend>example_interfaces</depend>
+```
