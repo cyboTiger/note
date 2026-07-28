@@ -167,3 +167,24 @@ target_link_libraries(target pkg1::pkg1 ... newpkg::newpkg)
 ```xml
 <depend>example_interfaces</depend>
 ```
+
+## TBD-ROS2节点通信
+### 话题
+### 服务
+### 参数
+### 动作
+
+## rosbag-时光记录仪
+
+我们就可以使用这个指令将话题数据存储为文件 ，后续我们无需启动节点，直接可以将bag文件里的话题数据发布出来。
+
+```bash
+ros2 bag record --topics /topic-name
+```
+
+Ctrl-C结束录制后，记录的数据会存储在xxx.mcap文件中，可以重播该数据
+
+```bash
+ros2 bag play xxx.mcap
+
+```

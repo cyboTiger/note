@@ -24,7 +24,7 @@ Makefile里主要包含了五个东西：显式规则、隐式规则、变量定
 
 + 注释。Makefile中只有行注释，和UNIX的Shell脚本一样，其注释是用 # 字符，这个就像C/C++中的 // 一样。如果你要在你的Makefile中使用 # 字符，可以用反斜杠进行转义，如： \# 
 
-## 包含其它Makefile¶
+## 包含其它Makefile
 
 在Makefile使用 include 指令可以把别的Makefile包含进来，这很像C语言的 #include ，被包含的文件会原模原样的放在当前文件的包含位置。 include 的语法是：
 
@@ -34,7 +34,7 @@ Makefile里主要包含了五个东西：显式规则、隐式规则、变量定
 
 在 include 前面可以有一些空字符，但是绝不能是 Tab 键开始。 include 和 <filenames> 可以用一个或多个空格隔开。
 
-## make的工作方式¶
+## make的工作方式
 
 GNU的make工作时的执行步骤如下：（想来其它的make也是类似）
 
