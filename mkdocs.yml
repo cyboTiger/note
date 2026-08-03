@@ -114,6 +114,8 @@ nav:
   - 具身智能:
     - robotics/index.md
     - ROS2: robotics/ros2.md
+    - 机器人学: 
+      - robotics/robot_kinematics/pose.md
   - 其他:
     - other/index.md
     - 工具:
