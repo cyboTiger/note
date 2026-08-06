@@ -88,6 +88,7 @@ nav:
     - Attention:
       - Flash Attention: dl/attention/flash_attn.md
       - Flex Attention: dl/attention/flex_attn.md
+      - Flash Linear Attention: dl/attention/fla.md
     - 神经网络架构:
       - CNN: dl/nn/cnn.md
     - 推理:
