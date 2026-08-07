@@ -2,7 +2,7 @@
 
 + 数学
 + 深度学习
-    - [ ] cs285 deep RL
+    - [ ] [cs285 deep RL](dl/rl/cs285.md)
 + 具身智能
     - [ ] [fishros/d2lros](robotics/ros2.md)
 + 杂项
