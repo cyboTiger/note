@@ -117,6 +117,8 @@ nav:
   - 具身智能:
     - robotics/index.md
     - ROS2: robotics/ros2.md
+    - Motion:
+      - GAMES105: robotics/games105.md
     - 机器人学: 
       - robotics/robot_kinematics/pose.md
   - 其他:
