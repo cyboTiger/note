@@ -124,7 +124,15 @@ dL &= \mathbf{g}^T d\mathbf{y} \\
 \end{align}
 $$
 
-$$\frac{\partial L}{\partial \mathbf{x}} = \frac{\gamma}{s} \odot \mathbf{g} - \frac{1}{ns^3} (\mathbf{g}^T (\gamma \odot \mathbf{x})) \mathbf{x}$$
+记 $\mathbf{\tilde{x}}=\frac{\mathbf{x}}{s}$ ，则有
+
+$$
+\begin{align}
+\frac{\partial L}{\partial \mathbf{x}} &= \frac{\gamma}{s} \odot \mathbf{g} - \frac{1}{ns^3} (\mathbf{g}^T (\gamma \odot \mathbf{x})) \mathbf{x} \\
+&= \frac{\gamma}{s} \odot \mathbf{g} - \frac{1}{ns} (\mathbf{g}^T (\gamma \odot \mathbf{\tilde{x}})) \mathbf{\tilde{x}} \\
+&= \frac{1}{s}(\mathbf{g} \odot \gamma - \frac{(\mathbf{g}^T \odot \gamma^T) \mathbf{\tilde{x}}}{n}  \mathbf{\tilde{x}})
+\end{align}
+$$
 
 ### LayerNorm
 定义：$\hat{\mathbf{x}} = \frac{\mathbf{x} - \mu}{\sigma}$，$\mathbf{y} = \gamma \hat{\mathbf{x}} + \beta$
@@ -135,7 +143,7 @@ $$
 
 LayerNorm 的反向传播在几何上非常有美感：它实际上是将下游梯度 $\mathbf{g}$ 投影到了一个与全 1 向量 $\mathbf{1}$ 和输入向量 $\hat{\mathbf{x}}$ 都正交的子空间上。
 
-$$ \frac{\partial L}{\partial \mathbf{x}} = \frac{\gamma}{\sigma} \left[ \mathbf{g} \odot \mathbf{1} - \text{mean}(\mathbf{g} \odot \mathbf{1}) - \text{mean}(\mathbf{g} \odot \hat{\mathbf{x}}) \hat{\mathbf{x}} \right] $$
+$$ \frac{\partial L}{\partial \mathbf{x}} = \frac{\gamma}{\sigma} \odot \left[ \mathbf{g} - \text{mean}(\mathbf{g}) \odot \mathbf{1} - \text{mean}(\mathbf{g} \odot \hat{\mathbf{x}}) \hat{\mathbf{x}} \right] $$
 
 第一项 $\mathbf{g}$： 原始梯度传回。
 
