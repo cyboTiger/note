@@ -100,20 +100,20 @@ nav:
       - fsdp: dl/training/fsdp.md
   - MLSys:
     - torch distributed: sys/torch_distributed.md
+    - PMPP阅读笔记: sys/pmpp.md
     - 量化:
       - Quant VideoGen: sys/quant/qvg.md
-    - 编译器:
-      - 编程语言:
-        - Rust: sys/pl/lang/rust.md
-        - Python: sys/pl/lang/python.md
-        - Cuda: sys/pl/lang/cuda.md
-        - PyTorch: sys/pl/lang/pytorch.md
-        - Triton-lang: sys/pl/lang/triton.md
-      - 编译工具链:
-        - CMake: sys/pl/compile/cmake.md
-        - Make: sys/pl/compile/make.md
-        - C Compiler: sys/pl/compile/ccompiler.md
-        - GDB: sys/pl/compile/gdb.md
+    - 编程语言:
+      - Rust: sys/pl/lang/rust.md
+      - Python: sys/pl/lang/python.md
+      - Cuda: sys/pl/lang/cuda.md
+      - PyTorch: sys/pl/lang/pytorch.md
+      - Triton-lang: sys/pl/lang/triton.md
+    - 编译工具链:
+      - CMake: sys/pl/compile/cmake.md
+      - Make: sys/pl/compile/make.md
+      - C Compiler: sys/pl/compile/ccompiler.md
+      - GDB: sys/pl/compile/gdb.md
   - 具身智能:
     - robotics/index.md
     - ROS2: robotics/ros2.md
@@ -130,7 +130,8 @@ nav:
       - vim: other/tool/vim.md
       - CI/CD: other/tool/cicd.md
       - vscode: other/tool/vscode.md
-      - Make: other/tool/make.md
+    - 记录:
+      - 安装 CUDA toolkit: other/hack/cuda_toolkit_install.md
 
 
 extra_javascript:
