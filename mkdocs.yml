@@ -89,6 +89,7 @@ nav:
       - Flash Attention: dl/attention/flash_attn.md
       - Flex Attention: dl/attention/flex_attn.md
       - Flash Linear Attention: dl/attention/fla.md
+      - Multi-Latent Attention: dl/attention/mla.md
     - 强化学习:
       - CS285: dl/rl/cs285.md
     - 神经网络架构:
@@ -106,7 +107,9 @@ nav:
     - 编程语言:
       - Rust: sys/pl/lang/rust.md
       - Python: sys/pl/lang/python.md
-      - Cuda: sys/pl/lang/cuda.md
+      - Go: sys/pl/lang/go.md
+      - CUDA: sys/pl/lang/cuda.md
+      - CUDA工程实践: sys/pl/lang/cuda_practice.md
       - PyTorch: sys/pl/lang/pytorch.md
       - Triton-lang: sys/pl/lang/triton.md
     - 编译工具链:

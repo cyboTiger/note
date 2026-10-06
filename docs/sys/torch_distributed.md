@@ -42,3 +42,5 @@ if __name__ == "__main__":
 ## P2P communication
 通过 `send` `recv` `isend` `irecv` 实现
 ## Collective communication
+gather scatter broadcast reduce
+all_reduce
