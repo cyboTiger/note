@@ -1,0 +1,22 @@
+/* LXGW WenKai Mono TC */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap');
+
+/* Google Sans */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Noto Sans Simplified Chinese */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+
+/* body,
+input {
+  font-family: "Roboto", "LXGW WenKai Mono TC", serif;
+}
+
+code,
+pre,
+kbd {
+  font-family: "JetBrains Mono", monospace;
+} */
