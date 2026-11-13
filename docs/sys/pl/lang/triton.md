@@ -114,6 +114,7 @@ for n in range(10000,9990,-1):
     # 第一次调用会编译，后续相同 n 会使用缓存
 ```
 结果如下：
+
 ```bash
 Runtime n version:
   n=10000, time=0.316052s
@@ -138,4 +139,15 @@ Constexpr n version:
   n=9993, time=0.001003s
   n=9992, time=0.001074s
   n=9991, time=0.001027s
+```
+
+## Cheat: Generate a triton kernel
+
+```python
+import torch
+torch.compile(torch.square)
+```
+
+```bash
+TORCH_LOGS="output_code" python compile_square.py
 ```

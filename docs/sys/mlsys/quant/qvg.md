@@ -4,7 +4,7 @@
 
 > tldr: 先通过 k-means 聚类 token，然后分组量化，称为 Semantic-Aware Smoothing（sas）；量化形成的残差再进行 sas，循环若干次，称为 Progressive Residual Quantization（prq）
 
-![](../../assets/img/qvg.png)
+![](../../../assets/img/qvg.png)
 
 ## Semantic-Aware Smoothing
 The key observation behind QVG is that video KV-cache exhibits strong spatiotemporal redundancy: tokens that are spatially or temporally adjacent tend to be numerically similar in latent space. A fixed spatial patch across consecutive frames changes slowly (temporal redundancy), and nearby patches within the same frame share similar features (spatial redundancy).

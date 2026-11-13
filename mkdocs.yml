@@ -99,11 +99,8 @@ nav:
     - 训练:
       - 优化器: dl/training/optim.md
       - fsdp: dl/training/fsdp.md
-  - MLSys:
-    - torch distributed: sys/torch_distributed.md
+  - System:
     - PMPP阅读笔记: sys/pmpp.md
-    - 量化:
-      - Quant VideoGen: sys/quant/qvg.md
     - 编程语言:
       - Rust: sys/pl/lang/rust.md
       - Python: sys/pl/lang/python.md
@@ -117,6 +114,16 @@ nav:
       - Make: sys/pl/compile/make.md
       - C Compiler: sys/pl/compile/ccompiler.md
       - GDB: sys/pl/compile/gdb.md
+    - 体系结构:
+      - CS61C: sys/arch/cs61c.md
+      - RISC-V指令集: sys/arch/riscv_inst.md
+    - 网络:
+      - CS168: sys/network/cs168.md
+    - MLSys:
+      - 量化:
+        - KV cache 量化:
+          - Quant VideoGen: sys/mlsys/quant/qvg.md
+      - torch distributed: sys/mlsys/torch_distributed.md
   - 具身智能:
     - robotics/index.md
     - ROS2: robotics/ros2.md

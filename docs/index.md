@@ -1,5 +1,7 @@
 # 笔记本
 
+![](assets/img/chip.png)
+
 + 数学
 + 机器学习系统
     - [ ] [PPMP前四章阅读](sys/pmpp.md)
